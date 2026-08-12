@@ -1,0 +1,436 @@
+<title>Xflow - Homepage Wireframe</title>
+<style>
+:root{
+  --paper:#F5F2EA;
+  --paper-2:#EDE8DC;
+  --ink:#16232B;
+  --ink-soft:#48606B;
+  --line:#B9C4C4;
+  --line-strong:#16232B;
+  --accent:#2C6E8C;
+  --accent-soft:#DCE9EC;
+  --tag:#8A6A3B;
+  --radius:2px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0E1A20;
+    --paper-2:#132530;
+    --ink:#E8EEEE;
+    --ink-soft:#93AAB0;
+    --line:#2E4550;
+    --line-strong:#7FC4DD;
+    --accent:#6FC3E4;
+    --accent-soft:#12313D;
+    --tag:#D9B475;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1A20; --paper-2:#132530; --ink:#E8EEEE; --ink-soft:#93AAB0;
+  --line:#2E4550; --line-strong:#7FC4DD; --accent:#6FC3E4; --accent-soft:#12313D; --tag:#D9B475;
+}
+:root[data-theme="light"]{
+  --paper:#F5F2EA; --paper-2:#EDE8DC; --ink:#16232B; --ink-soft:#48606B;
+  --line:#B9C4C4; --line-strong:#16232B; --accent:#2C6E8C; --accent-soft:#DCE9EC; --tag:#8A6A3B;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+}
+.mono{
+  font-family:ui-monospace,"SFMono-Regular","Consolas","Liberation Mono",monospace;
+  letter-spacing:0.02em;
+}
+
+/* ===== document frame ===== */
+.sheet{
+  max-width:920px;
+  margin:0 auto;
+  padding:56px 28px 120px;
+}
+.titleblock{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  border-bottom:2px solid var(--line-strong);
+  padding-bottom:18px;
+  margin-bottom:8px;
+  gap:24px;
+}
+.titleblock h1{
+  font-size:26px;
+  margin:0 0 6px;
+  text-wrap:balance;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+.titleblock .sub{
+  color:var(--ink-soft);
+  font-size:14px;
+  max-width:52ch;
+}
+.stamp{
+  text-align:right;
+  font-size:11px;
+  color:var(--ink-soft);
+  white-space:nowrap;
+}
+.stamp .mono{display:block; color:var(--ink);}
+.legend{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  margin:20px 0 48px;
+  padding:14px 16px;
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  font-size:12px;
+  color:var(--ink-soft);
+}
+.legend b{color:var(--ink); font-weight:600;}
+.legend span{display:flex; align-items:center; gap:7px;}
+.swatch{width:11px; height:11px; border:1px solid var(--line-strong); flex:none;}
+.sw-real{background:var(--accent-soft);}
+.sw-source{background:var(--tag); opacity:.35;}
+.sw-new{background:transparent; background-image:repeating-linear-gradient(45deg, var(--line-strong) 0 1px, transparent 1px 6px);}
+
+/* ===== section block (the wireframe "sheet") ===== */
+.block{
+  position:relative;
+  border:1.5px dashed var(--line);
+  margin-bottom:10px;
+  padding:20px 22px 22px;
+  background:var(--paper);
+}
+.block::before, .block::after,
+.corner-tl, .corner-br{
+  content:"";
+  position:absolute;
+  width:10px; height:10px;
+  border-color:var(--line-strong);
+  border-style:solid;
+}
+.corner-tl{top:-1px; left:-1px; border-width:2px 0 0 2px;}
+.corner-br{bottom:-1px; right:-1px; border-width:0 2px 2px 0;}
+
+.block-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  margin-bottom:14px;
+  flex-wrap:wrap;
+}
+.block-tag{
+  font-size:11px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+.block-title{
+  font-size:17px;
+  font-weight:700;
+  margin:2px 0 0;
+}
+.block-note{
+  font-size:12px;
+  color:var(--ink-soft);
+  max-width:38ch;
+  text-align:right;
+}
+
+/* generic wire content styles */
+.row{display:flex; gap:14px; flex-wrap:wrap;}
+.col{flex:1; min-width:0;}
+.wire-box{
+  border:1px solid var(--line);
+  background:var(--paper-2);
+  padding:12px 14px;
+  font-size:13px;
+}
+.wire-box.filled{background:var(--accent-soft); border-color:var(--accent);}
+.wire-box .lbl{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+  display:block;
+}
+.copy{font-size:13.5px; color:var(--ink);}
+.copy.headline{font-size:20px; font-weight:700; line-height:1.28; text-wrap:balance;}
+.dim{
+  border-top:1px dashed var(--line);
+  margin-top:14px;
+  padding-top:8px;
+  font-size:11px;
+  color:var(--ink-soft);
+  display:flex;
+  justify-content:space-between;
+}
+
+.pill{
+  display:inline-block;
+  font-size:10px;
+  padding:2px 7px;
+  border:1px solid var(--line-strong);
+  border-radius:20px;
+  color:var(--ink-soft);
+  margin-right:6px;
+}
+
+/* nav mock */
+.nav-mock{
+  display:flex; justify-content:space-between; align-items:center;
+  border:1px solid var(--line-strong);
+  padding:10px 14px;
+  font-size:12px;
+  background:var(--paper-2);
+}
+.nav-links{display:flex; gap:16px; color:var(--ink-soft);}
+.nav-links b{color:var(--ink);}
+.nav-cta{border:1px solid var(--accent); color:var(--accent); padding:4px 10px; font-size:11px;}
+
+/* hero */
+.hero-block .row{align-items:stretch;}
+.hero-visual{
+  min-height:150px;
+  border:1px dashed var(--line);
+  background:
+    repeating-linear-gradient(45deg, var(--line) 0 1px, transparent 1px 14px);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink-soft);
+  font-size:11px;
+  text-align:center;
+  padding:12px;
+}
+
+/* trust strip */
+.trust-row{display:flex; gap:10px; flex-wrap:wrap;}
+.trust-item{
+  flex:1; min-width:130px;
+  border:1px solid var(--line);
+  padding:10px 12px;
+  font-size:12px;
+  text-align:center;
+  background:var(--paper-2);
+}
+.trust-item .num{display:block; font-family:ui-monospace,monospace; font-size:18px; font-weight:700; color:var(--accent);}
+
+/* market cards */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+.mcard{border:1px solid var(--line); background:var(--paper-2); padding:14px;}
+.mcard h4{margin:0 0 6px; font-size:13.5px;}
+.mcard p{margin:0; font-size:12px; color:var(--ink-soft);}
+
+/* product grid */
+.pgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.pcard{border:1px solid var(--line); background:var(--paper-2); padding:14px; display:flex; flex-direction:column; gap:6px;}
+.pcard .lbl{font-size:10px; letter-spacing:0.07em; text-transform:uppercase; color:var(--accent);}
+.pcard h4{margin:0; font-size:14px;}
+.pcard p{margin:0; font-size:12px; color:var(--ink-soft);}
+
+/* evidence */
+.evidence-row{display:flex; gap:12px;}
+.evidence-item{flex:1; border:1px solid var(--line); padding:14px; background:var(--paper-2); text-align:center;}
+.evidence-item .n{font-family:ui-monospace,monospace; font-size:24px; font-weight:700; color:var(--accent); display:block;}
+.evidence-item .l{font-size:11px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;}
+
+/* footer */
+.footer-cols{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:16px; font-size:12px;}
+.footer-cols h5{margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft);}
+.footer-cols div{color:var(--ink-soft); line-height:1.9;}
+.footer-cols .compliance{color:var(--tag);}
+
+@media (max-width:640px){
+  .card-grid{grid-template-columns:1fr;}
+  .pgrid{grid-template-columns:1fr;}
+  .footer-cols{grid-template-columns:1fr 1fr;}
+  .row{flex-direction:column;}
+}
+</style>
+
+<div class="sheet">
+
+  <div class="titleblock">
+    <div>
+      <h1>Xflow - International Homepage Wireframe</h1>
+      <div class="sub">Structural plan for xflow.co.za, repositioned for overseas investor / institutional-client credibility. Content sourced only from the existing site; new fields flagged.</div>
+    </div>
+    <div class="stamp">
+      <span class="mono">ATL - XFLOW-WEB</span>
+      <span class="mono">REV 01 · AUG 2026</span>
+      <span class="mono">SCALE - HOMEPAGE / 1:1</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="swatch sw-real"></span><b>Filled</b> - real copy pulled from current xflow.co.za</span>
+    <span><span class="swatch sw-source"></span><b>Tag</b> - needs a real figure/asset from Xflow to fill in</span>
+    <span><span class="swatch sw-new"></span><b>Hatched</b> - new structural element, no content yet</span>
+  </div>
+
+  <!-- NAV -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">01 - Header / Nav</span><div class="block-title">Sector-first navigation, not a flat page list</div></div>
+      <div class="block-note">Replaces the current single-row page nav - signals scale, matches Xylem's Markets → Products → About pattern</div>
+    </div>
+    <div class="nav-mock">
+      <b class="mono">XFLOW</b>
+      <div class="nav-links"><b>Sectors ▾</b><span>Products ▾</span><span>About</span><span>Insights</span><span>Contact</span></div>
+      <div class="nav-cta mono">EN · ZAR/USD ▾</div>
+    </div>
+    <div class="dim"><span>Sectors ▾ = Municipal / Private &amp; Commercial / Industrial</span><span class="mono">currency + language toggle - new</span></div>
+  </div>
+
+  <!-- HERO -->
+  <div class="block hero-block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">02 - Hero</span><div class="block-title">Outcome-led headline, not a slogan</div></div>
+      <div class="block-note">Currently: "Cape Town's No. 1 Civil Engineering Systems" + Read More. Reframe to what Xflow actually delivers.</div>
+    </div>
+    <div class="row">
+      <div class="col" style="flex:1.3">
+        <div class="wire-box filled">
+          <span class="lbl">Headline - draft, needs a real client figure</span>
+          <div class="copy headline">Water infrastructure systems for municipal and private clients across the Western Cape - engineered by Xtreme Flow since 2015.</div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="wire-box">
+          <span class="lbl">Subhead (real, trimmed from current About copy)</span>
+          <div class="copy">Established 2015 by Sulaiman and the Xtreme Flow team, identifying the demand for water efficiency and resilience in Cape Town.</div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="row">
+          <div class="wire-box" style="flex:none; padding:8px 14px;">Primary CTA - Get in Touch</div>
+          <div class="wire-box" style="flex:none; padding:8px 14px;">Secondary - View Sectors</div>
+        </div>
+      </div>
+      <div class="col hero-visual">Real project photography<br/>(pipework / water metering install)<br/>- replaces stock hero image</div>
+    </div>
+    <div class="dim"><span>No slideshow/carousel - single fixed image, motion reserved for headline reveal only</span><span class="mono">masked line-reveal on load</span></div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">03 - Trust Strip</span><div class="block-title">Credibility signals, above the fold</div></div>
+      <div class="block-note">New section - this doesn't exist on the current site at all</div>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><span class="num mono">2015</span>Founded - Cape Town</div>
+      <div class="trust-item"><span class="num mono">▨▨▨</span>Years active <span class="pill">needs figure</span></div>
+      <div class="trust-item"><span class="num mono">KLINGER</span>Authorised pipe products partner</div>
+      <div class="trust-item"><span class="num mono">▨▨▨</span>Municipal + private clients served <span class="pill">needs figure</span></div>
+    </div>
+  </div>
+
+  <!-- MARKETS -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">04 - Markets We Serve</span><div class="block-title">Municipal / Private / Industrial split</div></div>
+      <div class="block-note">Currently implied only in one About sentence - gets its own structured section</div>
+    </div>
+    <div class="card-grid">
+      <div class="mcard"><h4>Municipal</h4><p>Water efficiency &amp; resilience infrastructure for municipal clients.</p></div>
+      <div class="mcard"><h4>Private &amp; Commercial</h4><p>Civil engineering systems for private-sector developments.</p></div>
+      <div class="mcard"><h4>Industrial</h4><p style="opacity:.6">- sector not yet confirmed on current site, verify before publishing</p></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">05 - Products &amp; Services</span><div class="block-title">Structured catalog, not a single blurb</div></div>
+      <div class="block-note">Splits "What We Do" + "Water Metering" + "Pipe Products" into a real grid, matches Precision Meters / KLINGER pattern</div>
+    </div>
+    <div class="pgrid">
+      <div class="pcard"><span class="lbl mono">Service</span><h4>Water Metering</h4><p>Metering systems for municipal and private water management - existing page, needs full copy pulled forward.</p></div>
+      <div class="pcard"><span class="lbl mono">Product Line</span><h4>KLINGER Pipe Products</h4><p>Pipe connection, repair &amp; flow control solutions - authorised distributor.</p></div>
+      <div class="pcard"><span class="lbl mono">Service</span><h4>Civil Engineering Systems</h4><p>Core "What We Do" offering - real scope to be pulled from current page copy.</p></div>
+      <div class="pcard"><span class="lbl mono">-</span><h4 style="opacity:.6">Fourth category, optional</h4><p style="opacity:.6">Room reserved if a 4th real service line exists</p></div>
+    </div>
+  </div>
+
+  <!-- EVIDENCE -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">06 - Evidence / Track Record</span><div class="block-title">Proof, before "About"</div></div>
+      <div class="block-note">All figures are placeholders - pull real ones from Xflow before build; do not invent numbers</div>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-item"><span class="n mono">10+</span><span class="l">Years in operation</span></div>
+      <div class="evidence-item"><span class="n mono">▨▨</span><span class="l">Municipalities served</span></div>
+      <div class="evidence-item"><span class="n mono">▨▨</span><span class="l">Projects completed</span></div>
+      <div class="evidence-item"><span class="n mono">1</span><span class="l">KLINGER partnership</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">07 - About (Preview)</span><div class="block-title">Full origin story, condensed</div></div>
+      <div class="block-note">Real copy, trimmed from current About Xflow section</div>
+    </div>
+    <div class="wire-box filled">
+      <span class="lbl">Real copy</span>
+      <div class="copy">Established in 2015, by identifying the demand for water efficiency and resilience in Cape Town, Sulaiman and his team at Xtreme Flow (Xflow) set out to become one of the leading water solution providers in the market for municipal and private clients.</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">08 - Enquiry</span><div class="block-title">Contact, framed for two audiences</div></div>
+      <div class="block-note">Same form fields as current site (name / email / subject / message) - split framing only</div>
+    </div>
+    <div class="row">
+      <div class="wire-box col"><span class="lbl">Client / municipal enquiry</span>Name · Email · Subject · Message - existing form, unchanged</div>
+      <div class="wire-box col" style="opacity:.6"><span class="lbl">Investor / partnership enquiry - new</span>Separate routing so investor mail doesn't land in the general enquiry queue</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="block">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="block-head">
+      <div><span class="block-tag mono">09 - Footer</span><div class="block-title">Governance &amp; compliance as first-class links</div></div>
+      <div class="block-note">This is the single biggest structural gap vs. Xylem / Precision Meters - currently just a copyright line + agency credit</div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>Xflow</h5>
+        <div>+27 21 691 2157<br/>info@xflow.co.za<br/>Cape Town, South Africa</div>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <div>About Us<br/>What We Do<br/>Sectors</div>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <div>Water Metering<br/>Pipe Products</div>
+      </div>
+      <div>
+        <h5 class="compliance">Governance <span class="pill" style="margin-left:4px;">new</span></h5>
+        <div class="compliance">Company Registration<br/>Certifications ▨▨<br/>Privacy Policy<br/>Terms of Service</div>
+      </div>
+    </div>
+    <div class="dim"><span>© Xflow - remove "Powered by [Agency]" credit line</span><span class="mono">investor-grade footer</span></div>
+  </div>
+
+</div>
