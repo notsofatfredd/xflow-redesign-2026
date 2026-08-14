@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xflow — Delta — Banner</title>
+<style>
+  /* CONCEPT: delta — municipality/government-trust concept
+     (ref: City of Cape Town Water and Sanitation — trust cues borrowed, not its UX/datedness).
+     Emotion: trust, institutional strength. Formal, restrained, structured. */
+  :root{
+    --paper:#F4F5F1; --ink:#16232E; --line:#C9CEC4;
+    --official:#23415E;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html,body{width:1200px; height:630px; overflow:hidden;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    position:relative;
+  }
+  .frame{
+    position:absolute; inset:0;
+    padding:56px 72px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .rule-top{border-top:3px solid var(--official); border-bottom:1px solid var(--official); height:6px; margin-bottom:26px;}
+  .top{display:flex; align-items:flex-start; justify-content:space-between;}
+  .wordmark{font-size:24px; font-weight:700; letter-spacing:0.01em;}
+  .mark{
+    width:38px; height:38px; border:2px solid var(--official);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mark::after{content:""; width:14px; height:14px; border:2px solid var(--official);}
+  .ref{
+    font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;
+    font-size:11px; letter-spacing:0.06em; text-align:right; line-height:1.6;
+    color:var(--ink); opacity:.6;
+  }
+  .headline{
+    /* REPLACE: swap this headline per post — this is a placeholder example */
+    font-size:48px; font-weight:700; line-height:1.14; letter-spacing:-0.01em;
+    max-width:880px;
+  }
+  .subhead{
+    /* REPLACE: swap this subhead per post — this is a placeholder example */
+    margin-top:18px;
+    font-size:19px; font-weight:400; line-height:1.5; color:var(--ink); opacity:.75;
+    max-width:700px;
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  .bottom{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:20px; border-top:1px solid var(--official);
+  }
+  .url{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:14px; color:var(--official); font-weight:700;}
+  .tag{
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:12px; color:var(--ink); opacity:.6; letter-spacing:0.04em;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div>
+      <div class="rule-top"></div>
+      <div class="top">
+        <div class="wordmark">Xflow</div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div class="ref">CIVIL &amp; WATER<br>INFRASTRUCTURE</div>
+          <div class="mark"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 class="headline">Infrastructure built to a municipal standard</h1>
+      <p class="subhead">The same rigor Cape Town's water systems run on, applied to every civil and pipe project we take on.</p>
+    </div>
+    <div class="bottom">
+      <div class="url">xflow.co.za</div>
+      <div class="tag">Bulk water &amp; sewer · Pressure &amp; zone management</div>
+    </div>
+  </div>
+</body>
+</html>
