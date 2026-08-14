@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xflow — Cove — Banner</title>
+<style>
+  /* CONCEPT: cove — sector-leader concept (ref: CSV Construction, Western Cape top-5 civil
+     contractor — improved, aspirational version of that register).
+     Emotion: ambition, aspiration, the future. Elevated, generous whitespace, horizon motif. */
+  :root{
+    --ink:#0B2027; --fg-muted:#3F5860;
+    --gold:#B8892F;
+    --sky-top:#F4EFE4; --sky-bot:#DCE8E6; --water:#0E3B43;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html,body{width:1200px; height:630px; overflow:hidden;}
+  body{
+    background:linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bot) 66%, var(--water) 100%);
+    color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    position:relative;
+  }
+  .horizon{
+    position:absolute; left:0; right:0; top:66%; height:1px;
+    background:rgba(11,32,39,.18);
+  }
+  .frame{
+    position:absolute; inset:0;
+    padding:60px 76px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .top{display:flex; align-items:center; justify-content:space-between;}
+  .wordmark{font-size:24px; font-weight:600; letter-spacing:0.01em;}
+  .badge{
+    font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink); opacity:.55;
+    border:1px solid rgba(11,32,39,.25); border-radius:999px;
+    padding:7px 14px;
+  }
+  .ascend{display:flex; align-items:flex-end; gap:5px; margin-bottom:20px;}
+  .ascend span{width:9px; background:var(--gold); border-radius:2px;}
+  .ascend span:nth-child(1){height:10px;}
+  .ascend span:nth-child(2){height:17px;}
+  .ascend span:nth-child(3){height:25px;}
+  .headline{
+    /* REPLACE: swap this headline per post — this is a placeholder example */
+    font-size:50px; font-weight:600; line-height:1.1; letter-spacing:-0.01em;
+    max-width:880px;
+    color:var(--ink);
+  }
+  .subhead{
+    /* REPLACE: swap this subhead per post — this is a placeholder example */
+    margin-top:16px;
+    font-size:19px; font-weight:400; line-height:1.45; color:var(--fg-muted);
+    max-width:680px;
+  }
+  .bottom{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:20px; border-top:1px solid rgba(238,243,241,.35);
+  }
+  .url{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:14px; color:#EAF3F1; font-weight:600;}
+  .tag{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:12px; color:rgba(234,243,241,.7); letter-spacing:0.04em;}
+</style>
+</head>
+<body>
+  <div class="horizon"></div>
+  <div class="frame">
+    <div class="top">
+      <div class="wordmark">Xflow</div>
+      <div class="badge">Civil &amp; Water Infrastructure</div>
+    </div>
+    <div>
+      <div class="ascend"><span></span><span></span><span></span></div>
+      <h1 class="headline">Engineered for what Cape Town builds next</h1>
+      <p class="subhead">From bulk water lines to civil works — infrastructure built for where the city is headed.</p>
+    </div>
+    <div class="bottom">
+      <div class="url">xflow.co.za</div>
+      <div class="tag">Quality · Trust · Innovation</div>
+    </div>
+  </div>
+</body>
+</html>

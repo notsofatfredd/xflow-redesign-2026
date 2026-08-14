@@ -7,12 +7,12 @@ const exportsDir = path.join(__dirname, 'exports');
 fs.mkdirSync(exportsDir, { recursive: true });
 
 const targets = [
-  { file: 'flow-square.html', out: 'flow-square.png', width: 1080, height: 1080 },
-  { file: 'flow-banner.html', out: 'flow-banner.png', width: 1200, height: 630 },
-  { file: 'blueprint-square.html', out: 'blueprint-square.png', width: 1080, height: 1080 },
-  { file: 'blueprint-banner.html', out: 'blueprint-banner.png', width: 1200, height: 630 },
-  { file: 'ductile-square.html', out: 'ductile-square.png', width: 1080, height: 1080 },
-  { file: 'ductile-banner.html', out: 'ductile-banner.png', width: 1200, height: 630 },
+  { file: 'onyx-square.html', out: 'onyx-square.png', width: 1080, height: 1080 },
+  { file: 'onyx-banner.html', out: 'onyx-banner.png', width: 1200, height: 630 },
+  { file: 'delta-square.html', out: 'delta-square.png', width: 1080, height: 1080 },
+  { file: 'delta-banner.html', out: 'delta-banner.png', width: 1200, height: 630 },
+  { file: 'cove-square.html', out: 'cove-square.png', width: 1080, height: 1080 },
+  { file: 'cove-banner.html', out: 'cove-banner.png', width: 1200, height: 630 },
 ];
 
 (async () => {

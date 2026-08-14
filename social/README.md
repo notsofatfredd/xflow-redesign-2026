@@ -1,14 +1,25 @@
 # Xflow social templates
 
-Concept-matched social graphic templates for xflow.co.za, built to match the same 3 visual
-concepts used in the `concept-switcher-treatment` site redesign branch:
+Concept-matched social graphic templates for xflow.co.za, triangulated per the Cold-Call
+Concept Demo Module spec (Section 7.6) — each concept is modeled on a real reference company,
+not an invented aesthetic. Companion to the `triangulated-concepts` site redesign branch,
+which uses the same three references.
 
-- **flow** — the current/existing Xflow brand identity, carried forward as-is (teal + sand on
-  paper/ink tones).
-- **blueprint** — light, technical-drawing concept: faint engineering grid, navy linework,
-  monospace used only for spec/data callouts, safety-orange accent chip.
-- **ductile** — dark, industrial concept evoking cast/ductile iron pipe: charcoal background,
-  copper accent, concentric-ring motif, heavier uppercase type.
+- **onyx** — direct-rival concept. Ref: **Umdla Civils & Plumbing** (umdla.co.za), a real
+  Cape Town-region contractor doing near-identical work (civils, plumbing, bulk water meter
+  installation). Emotion: loss aversion / competitive urgency. Dark, sharp, present-tense —
+  chevron/momentum motif, icy-blue accent on near-black.
+- **delta** — municipality/government-trust concept. Ref: **City of Cape Town Water and
+  Sanitation** (capetown.gov.za) — xflow's actual municipal jurisdiction. Emotion: trust,
+  institutional strength. Borrows the *trust cues* (formal hierarchy, restrained institutional
+  color, letterhead-style rule) — not the site's actual dated UX.
+- **cove** — sector-leader concept. Ref: **CSV Construction** (csvconstruction.com), a real
+  Western Cape top-5 civil engineering contractor one tier above xflow. Emotion: ambition,
+  aspiration, the future. Elevated, generous whitespace, horizon-gradient motif.
+
+None of the three impersonate their reference company — no borrowed logos, names used as
+Xflow's own, or fabricated claims about them. All copy uses only facts already documented on
+xflow's own site (service categories, "Quality · Trust · Innovation").
 
 ## Structure
 
@@ -28,8 +39,9 @@ Formats:
 
 Each template has two placeholder text blocks marked with `REPLACE:` comments in the CSS/markup:
 a `.headline` element and a `.subhead` element. Swap that text per post — the placeholder copy
-in each file (e.g. "A new look for Xflow", "Engineered for what's next", "Built to move water
-at scale") is an example, not a fixed final post.
+in each file (e.g. "Built to be first on site", "Infrastructure built to a municipal standard",
+"Engineered for what Cape Town builds next") is an example matching that concept's emotional
+register, not a fixed final post.
 
 ## Regenerating exports
 
