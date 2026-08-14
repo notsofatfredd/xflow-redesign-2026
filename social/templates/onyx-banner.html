@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xflow — Onyx — Banner</title>
+<style>
+  /* CONCEPT: onyx — direct-rival concept (ref: Umdla Civils & Plumbing, Cape Town region).
+     Emotion: loss aversion / competitive urgency, present-tense. Dark, sharp, forward-leaning. */
+  :root{
+    --bg:#0A0D12; --bg-2:#111620; --fg:#EEF1F5; --fg-muted:#8B93A0;
+    --accent:#4F7CFF; --line:#1E2530;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html,body{width:1200px; height:630px; overflow:hidden;}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    position:relative;
+  }
+  .slab{
+    position:absolute; top:0; right:0; width:300px; height:630px;
+    background:linear-gradient(180deg, rgba(79,124,255,.14), rgba(79,124,255,0) 70%);
+    clip-path:polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+    pointer-events:none;
+  }
+  .frame{
+    position:absolute; inset:0;
+    padding:64px 72px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .top{display:flex; align-items:center; justify-content:space-between;}
+  .wordmark{font-size:24px; font-weight:900; letter-spacing:0.01em; text-transform:uppercase;}
+  .wordmark span{color:var(--accent);}
+  .badge{
+    font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--fg-muted);
+    border:1px solid var(--line); border-radius:999px;
+    padding:7px 14px;
+  }
+  .chevron{display:flex; gap:6px; margin-bottom:20px;}
+  .chevron span{width:24px; height:5px; background:var(--accent); border-radius:2px;}
+  .chevron span:nth-child(2){opacity:.6;}
+  .chevron span:nth-child(3){opacity:.3;}
+  .headline{
+    /* REPLACE: swap this headline per post — this is a placeholder example */
+    font-size:56px; font-weight:900; line-height:1.04; letter-spacing:-0.02em;
+    max-width:900px;
+  }
+  .subhead{
+    /* REPLACE: swap this subhead per post — this is a placeholder example */
+    margin-top:16px;
+    font-size:20px; font-weight:400; line-height:1.4; color:var(--fg-muted);
+    max-width:660px;
+  }
+  .bottom{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:22px; border-top:1px solid var(--line);
+  }
+  .url{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:14px; color:var(--accent); font-weight:700;}
+  .tag{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:12px; color:var(--fg-muted); letter-spacing:0.04em;}
+</style>
+</head>
+<body>
+  <div class="slab"></div>
+  <div class="frame">
+    <div class="top">
+      <div class="wordmark">X<span>FLOW</span></div>
+      <div class="badge">Response-Ready</div>
+    </div>
+    <div>
+      <div class="chevron"><span></span><span></span><span></span></div>
+      <h1 class="headline">Built to be first on site</h1>
+      <p class="subhead">Faster response, sharper execution — civil, water metering and pipe infrastructure work, done right the first time.</p>
+    </div>
+    <div class="bottom">
+      <div class="url">xflow.co.za</div>
+      <div class="tag">Civil works · Water metering · Pipe products</div>
+    </div>
+  </div>
+</body>
+</html>
