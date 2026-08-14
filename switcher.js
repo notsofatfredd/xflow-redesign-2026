@@ -4,7 +4,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.switcher-tabs button');
-    var current = document.documentElement.getAttribute('data-concept') || 'flow';
+    var current = document.documentElement.getAttribute('data-concept') || 'onyx';
 
     buttons.forEach(function (btn) {
       var active = btn.dataset.set === current;

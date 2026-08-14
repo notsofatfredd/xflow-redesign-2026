@@ -1,38 +1,48 @@
-/* XFLOW shared stylesheet — concept switcher system (flow / blueprint / ductile) */
+/* XFLOW shared stylesheet — concept switcher system (onyx / delta / cove) */
 
 /* =====================================================================
    XFLOW — concept switcher system
-   Three structurally distinct directions, one shared component set.
-   flow      = current brand, carried forward unchanged
-   blueprint = light, technical-drawing / spec-sheet direction
-   ductile   = dark, industrial / cast-iron-and-water direction
+   Three concepts, each triangulated against a real reference point
+   (Atlas OS Section 7.6 methodology) rather than an invented aesthetic:
+   onyx  = direct-rival concept, ref: Umdla Civils & Plumbing (Cape Town
+           regional contractor, same vertical) — emotion: competitive
+           urgency. Bold, assertive, dark-cinematic: "the sharper operator."
+   delta = municipality/government-trust concept, ref: City of Cape Town
+           Water and Sanitation (Xflow's actual jurisdiction) — emotion:
+           trust, institutional strength. Restrained civic-blue register —
+           borrows the trust cues (structure, formality, credential-driven
+           proof), not the dated bureaucratic execution.
+   cove  = sector-leader concept, ref: CSV Construction (Western Cape
+           top-5 civil engineering contractor, same business model) —
+           emotion: ambition, aspiration, the future. Elevated, confident,
+           scale-driven register.
    ===================================================================== */
 
-html[data-concept="flow"]{
-  --ink:#0B2027; --paper:#EEF1EC; --paper-2:#E2E7DF; --line:#C3CBC1;
-  --deep:#08181D; --accent:#1E8C8F; --accent-2:#57C2C0;
-  --sand:#C08A44; --on-deep:#EAF3F1; --on-deep-soft:#8FB3B0;
-  --warn-bg:#F3E7D6; --warn-line:#C08A44;
+html[data-concept="onyx"]{
+  --ink:#EDEFF1; --paper:#0E1216; --paper-2:#171C21; --line:#2B3238;
+  --deep:#070A0C; --accent:#E4572E; --accent-2:#F2A65A;
+  --sand:#C9905A; --on-deep:#EDEFF1; --on-deep-soft:#8B95A0;
+  --warn-bg:#241A0E; --warn-line:#E4572E;
   --font-mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
-  --headline-weight:800; --headline-tracking:-0.02em;
+  --headline-weight:900; --headline-tracking:-0.03em;
 }
 
-html[data-concept="blueprint"]{
-  --ink:#0B1E33; --paper:#F7F5EF; --paper-2:#ECE8DC; --line:#C9C2AC;
-  --deep:#0B1E33; --accent:#D9541E; --accent-2:#F2965A;
-  --sand:#8A7A52; --on-deep:#F2EFE6; --on-deep-soft:#93A3B8;
-  --warn-bg:#FBEAD9; --warn-line:#D9541E;
+html[data-concept="delta"]{
+  --ink:#0B1E33; --paper:#F5F7F8; --paper-2:#E9EEF1; --line:#C4D0D8;
+  --deep:#0B1E33; --accent:#1D5C8A; --accent-2:#4A87AC;
+  --sand:#5C7A8A; --on-deep:#EEF3F6; --on-deep-soft:#8FA6B8;
+  --warn-bg:#EAF0F4; --warn-line:#1D5C8A;
   --font-mono:'IBM Plex Mono',ui-monospace,"SFMono-Regular",Consolas,monospace;
   --headline-weight:600; --headline-tracking:0em;
 }
 
-html[data-concept="ductile"]{
-  --ink:#ECE7DE; --paper:#15181B; --paper-2:#1E2227; --line:#34393E;
-  --deep:#0B0D0F; --accent:#B5773C; --accent-2:#6FCFC9;
-  --sand:#C9905A; --on-deep:#ECE7DE; --on-deep-soft:#7C8288;
-  --warn-bg:#241A0E; --warn-line:#B5773C;
+html[data-concept="cove"]{
+  --ink:#ECE7DE; --paper:#101A1B; --paper-2:#182425; --line:#2C3C3D;
+  --deep:#081213; --accent:#C9A24B; --accent-2:#6FCFC9;
+  --sand:#C9A24B; --on-deep:#ECE7DE; --on-deep-soft:#82918F;
+  --warn-bg:#241E0E; --warn-line:#C9A24B;
   --font-mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
-  --headline-weight:900; --headline-tracking:-0.03em;
+  --headline-weight:800; --headline-tracking:-0.02em;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -42,41 +52,41 @@ html[data-concept="ductile"]{
 
 /* ---------- concept-scoped copy (hero headline/eyebrow/subhead swaps) ---------- */
 .concept-copy{display:none;}
-html[data-concept="flow"] .copy-flow{display:block;}
-html[data-concept="blueprint"] .copy-blueprint{display:block;}
-html[data-concept="ductile"] .copy-ductile{display:block;}
+html[data-concept="onyx"] .copy-onyx{display:block;}
+html[data-concept="delta"] .copy-delta{display:block;}
+html[data-concept="cove"] .copy-cove{display:block;}
 span.concept-copy{display:none;}
-html[data-concept="flow"] span.copy-flow{display:inline;}
-html[data-concept="blueprint"] span.copy-blueprint{display:inline;}
-html[data-concept="ductile"] span.copy-ductile{display:inline;}
+html[data-concept="onyx"] span.copy-onyx{display:inline;}
+html[data-concept="delta"] span.copy-delta{display:inline;}
+html[data-concept="cove"] span.copy-cove{display:inline;}
 
-/* ---------- blueprint: technical-drawing structural traits ---------- */
-html[data-concept="blueprint"] body{
+/* ---------- delta: institutional / grid-structured traits (borrows City of Cape Town Water & Sanitation trust cues) ---------- */
+html[data-concept="delta"] body{
   background-image:
     linear-gradient(color-mix(in srgb, var(--line) 35%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--line) 35%, transparent) 1px, transparent 1px);
   background-size:28px 28px;
   background-position:-1px -1px;
 }
-html[data-concept="blueprint"] .mono,
-html[data-concept="blueprint"] .eyebrow{font-family:var(--font-mono);}
-html[data-concept="blueprint"] h1,
-html[data-concept="blueprint"] h2,
-html[data-concept="blueprint"] h3{font-weight:var(--headline-weight); letter-spacing:var(--headline-tracking);}
-html[data-concept="blueprint"] .btn{border-radius:0;}
-html[data-concept="blueprint"] .service-card,
-html[data-concept="blueprint"] .contact-card,
-html[data-concept="blueprint"] .cert-record,
-html[data-concept="blueprint"] .stat,
-html[data-concept="blueprint"] .ecell{border-radius:0 !important;}
+html[data-concept="delta"] .mono,
+html[data-concept="delta"] .eyebrow{font-family:var(--font-mono);}
+html[data-concept="delta"] h1,
+html[data-concept="delta"] h2,
+html[data-concept="delta"] h3{font-weight:var(--headline-weight); letter-spacing:var(--headline-tracking);}
+html[data-concept="delta"] .btn{border-radius:0;}
+html[data-concept="delta"] .service-card,
+html[data-concept="delta"] .contact-card,
+html[data-concept="delta"] .cert-record,
+html[data-concept="delta"] .stat,
+html[data-concept="delta"] .ecell{border-radius:0 !important;}
 
-/* ---------- ductile: industrial structural traits ---------- */
-html[data-concept="ductile"] h1,
-html[data-concept="ductile"] h2{
+/* ---------- cove: elevated sector-leader traits (ref: CSV Construction) ---------- */
+html[data-concept="cove"] h1,
+html[data-concept="cove"] h2{
   font-weight:var(--headline-weight); letter-spacing:var(--headline-tracking);
 }
-html[data-concept="ductile"] .pagehead::before,
-html[data-concept="ductile"] .hero::before{
+html[data-concept="cove"] .pagehead::before,
+html[data-concept="cove"] .hero::before{
   content:"";
   position:absolute; right:-6vw; top:50%; transform:translateY(-50%);
   width:44vw; aspect-ratio:1/1; max-width:520px;
@@ -86,8 +96,8 @@ html[data-concept="ductile"] .hero::before{
              0 0 0 80px color-mix(in srgb, var(--on-deep) 2%, transparent) inset;
   pointer-events:none;
 }
-html[data-concept="ductile"] .index-num,
-html[data-concept="ductile"] .n{letter-spacing:-0.02em;}
+html[data-concept="cove"] .index-num,
+html[data-concept="cove"] .n{letter-spacing:-0.02em;}
 
 /* =====================================================================
    Demo harness toolbar — deliberately hardcoded, NEVER uses --paper/
@@ -225,6 +235,50 @@ p{margin:0;}
 .stat{border-left:1px solid rgba(234,243,241,.18); padding-left:16px;}
 .stat .n{font-family:ui-monospace,monospace; font-size:22px; font-weight:700; color:var(--accent-2);}
 .stat .l{font-size:11.5px; color:var(--on-deep-soft); text-transform:uppercase; letter-spacing:.06em; margin-top:4px;}
+
+/* ---------- ghost watermark (cinematic hero backdrop) ---------- */
+.ghost-watermark{
+  position:absolute; top:50%; left:50%; z-index:1;
+  transform:translate(-50%,-50%);
+  font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+  font-size:clamp(6rem,22vw,20rem);
+  color:var(--on-deep);
+  opacity:.05;
+  white-space:nowrap; letter-spacing:-0.02em;
+  pointer-events:none;
+  animation:drift 22s ease-in-out infinite alternate;
+}
+@keyframes drift{ from{transform:translate(-52%,-50%);} to{transform:translate(-48%,-50%);} }
+
+/* ---------- masked line-by-line headline reveal ---------- */
+.hero h1 .rline{display:block; overflow:hidden;}
+.hero h1 .rline span{display:block; transform:translateY(110%); animation:reveal .9s cubic-bezier(.22,1,.36,1) forwards;}
+.hero h1 .rline:nth-child(1) span{animation-delay:.05s;}
+.hero h1 .rline:nth-child(2) span{animation-delay:.2s;}
+@keyframes reveal{ to{transform:translateY(0);} }
+
+/* ---------- marquee divider ---------- */
+.marquee-strip{
+  position:relative; z-index:2;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  overflow:hidden; white-space:nowrap; background:var(--paper-2);
+  padding:14px 0;
+}
+.marquee-track{
+  display:inline-block;
+  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; font-weight:900; font-size:13.5px;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--ink); opacity:.62;
+  animation:mscroll 30s linear infinite;
+}
+.marquee-track span{margin:0 20px;}
+.marquee-track span::after{content:'•'; margin-left:20px; color:var(--accent); opacity:1;}
+@keyframes mscroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+@media (prefers-reduced-motion: reduce){
+  .ghost-watermark{animation:none;}
+  .hero h1 .rline span{animation:none; transform:translateY(0);}
+  .marquee-track{animation:none;}
+}
 
 /* ================= SECTION SHELL ================= */
 section{padding:96px 0;}
