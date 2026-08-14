@@ -172,10 +172,6 @@ p{margin:0;}
 .nav-links{display:flex; gap:28px; font-size:13.5px; color:var(--ink); opacity:.82;}
 .nav-links span{cursor:default;}
 .nav-right{display:flex; align-items:center; gap:16px; font-size:12px;}
-.lang{
-  font-family:ui-monospace,monospace; color:var(--on-deep-soft);
-  border:1px solid var(--line); padding:4px 8px; border-radius:3px;
-}
 .btn{
   display:inline-flex; align-items:center; gap:8px;
   padding:9px 18px; font-size:13px; font-weight:600;
@@ -724,14 +720,12 @@ section{padding:72px 0;}
 .subcard p{font-size:12px; opacity:.65; margin-top:6px; line-height:1.5;}
 
 /* placeholder / gap block */
-.gap-block{
-  border:1.5px dashed var(--warn-line); padding:32px 28px; text-align:left;
-  background:repeating-linear-gradient(45deg, transparent 0 10px, color-mix(in srgb, var(--warn-line) 8%, transparent) 10px 20px);
+.invite-block{
+  border:1px solid var(--line); padding:32px 28px; text-align:left;
+  background:var(--paper-2);
 }
-.gap-block .tag{font-family:ui-monospace,monospace; font-size:11px; color:var(--warn-line); text-transform:uppercase; letter-spacing:.06em;}
-.gap-block h3{font-size:19px; margin-top:10px;}
-.gap-block p{font-size:13.5px; opacity:.75; margin-top:10px; max-width:64ch; line-height:1.6;}
-.gap-block ul{margin:14px 0 0; padding-left:18px; font-size:13px; opacity:.75; line-height:1.9;}
+.invite-block h3{font-size:19px;}
+.invite-block p{font-size:13.5px; opacity:.75; margin-top:10px; max-width:64ch; line-height:1.6;}
 
 /* comparison strip */
 .compare{background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
