@@ -172,10 +172,6 @@ p{margin:0;}
 .nav-links{display:flex; gap:28px; font-size:13.5px; color:var(--ink); opacity:.82;}
 .nav-links span{cursor:default;}
 .nav-right{display:flex; align-items:center; gap:16px; font-size:12px;}
-.lang{
-  font-family:ui-monospace,monospace; color:var(--on-deep-soft);
-  border:1px solid var(--line); padding:4px 8px; border-radius:3px;
-}
 .btn{
   display:inline-flex; align-items:center; gap:8px;
   padding:9px 18px; font-size:13px; font-weight:600;
