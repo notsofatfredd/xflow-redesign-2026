@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-clients", "ro-founder", "ro-specs", "ro-iot", "ro-infield", "ro-timeline"],
+  delta: ["ro-timeline", "ro-founder", "ro-specs", "ro-clients", "ro-iot", "ro-infield"],
+  cove:  ["ro-iot", "ro-founder", "ro-timeline", "ro-specs", "ro-infield", "ro-clients"]
+};
+</script>
 
 
 <nav class="nav">
@@ -59,7 +66,8 @@
   </div>
 </header>
 
-<section>
+<div class="reorder-sections">
+<section class="ro-founder">
   <div class="wrap">
         <div class="founder-grid">
       <div class="founder-visual">
@@ -81,7 +89,7 @@
   </div>
 </section>
 
-<section style="padding-top:0;">
+<section style="padding-top:0;" class="ro-infield">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">In the field</div><h2>What the crew and vehicles look like on site.</h2></div>
@@ -100,7 +108,7 @@
   </div>
 </section>
 
-<section style="padding-top:0;">
+<section style="padding-top:0;" class="ro-timeline">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Timeline</div><h2>From municipal insider to independent specialist.</h2></div>
@@ -115,7 +123,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-specs">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">What we specialise in</div><h2>Three disciplines, one team.</h2></div>
@@ -129,7 +137,7 @@
   </div>
 </section>
 
-<section class="clients">
+<section class="clients ro-clients">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Who we've worked with</div><h2 style="color:var(--on-deep)">Named clients, including the City itself.</h2></div>
@@ -146,7 +154,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-iot">
   <div class="wrap">
     <div class="iot-block">
       <div>
@@ -157,6 +165,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <section class="cta">
   <div class="wrap cta-inner">

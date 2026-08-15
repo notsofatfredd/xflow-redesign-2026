@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-photos", "ro-fit", "ro-partner"],
+  delta: ["ro-partner", "ro-fit", "ro-photos"],
+  cove:  ["ro-fit", "ro-partner", "ro-photos"]
+};
+</script>
 
 
 <nav class="nav">
@@ -64,7 +71,8 @@
       </div>
 </section>
 
-<section class="partner-strip" style="padding:0;">
+<div class="reorder-sections">
+<section class="partner-strip ro-partner" style="padding:0;">
   <div class="wrap partner-inner">
     <div class="partner-badge">KLINGER</div>
     <div class="partner-copy">
@@ -74,7 +82,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-fit">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Where pipe products fit</div><h2>Supplied alongside real specialisms.</h2></div>
@@ -91,7 +99,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-photos">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Product photography</div><h2>Real photos, found on the live server.</h2></div>
@@ -105,6 +113,8 @@
     </div>
   </div>
 </section>
+
+</div>
 
 <section class="cta">
   <div class="wrap cta-inner">

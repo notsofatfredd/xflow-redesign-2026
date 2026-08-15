@@ -506,6 +506,9 @@ section{padding:72px 0;}
 .etab{flex:1; background:var(--paper); padding:12px 14px; font-size:12.5px; text-align:center; cursor:default;}
 .etab.active{background:var(--accent); color:var(--deep); font-weight:600;}
 .etab .k{display:block; font-family:ui-monospace,monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; margin-bottom:3px;}
+/* Cove: Investor & Partnership route leads by default - aspiration register */
+html[data-concept="cove"] .etab.active{background:var(--paper); color:inherit; font-weight:400;}
+html[data-concept="cove"] .etab:nth-child(2){background:var(--accent); color:var(--deep); font-weight:600;}
 
 .details{display:flex; flex-direction:column; gap:28px;}
 .detail-block{border-left:2px solid var(--line); padding-left:18px;}

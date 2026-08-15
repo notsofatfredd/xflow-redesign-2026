@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-cta", "ro-latest", "ro-starter"],
+  delta: ["ro-starter", "ro-latest", "ro-cta"],
+  cove:  ["ro-latest", "ro-starter", "ro-cta"]
+};
+</script>
 
 
 <nav class="nav">
@@ -59,7 +66,8 @@
   </div>
 </header>
 
-<section>
+<div class="reorder-sections">
+<section class="ro-latest">
   <div class="wrap">
 
     <div class="section-head">
@@ -80,7 +88,10 @@
         <div class="date">-- --- 2026</div>
       </div>
     </div>
-
+  </div>
+</section>
+<section class="ro-starter">
+  <div class="wrap">
     <div class="starter-list">
       <div class="section-head" style="margin-bottom:20px;">
         <div><div class="eyebrow">Realistic starting content</div><h2 style="font-size:19px;">What Xflow could publish without new writing effort.</h2></div>
@@ -94,8 +105,7 @@
     </div>
   </div>
 </section>
-
-<section class="cta">
+<section class="cta ro-cta">
   <div class="wrap cta-inner">
     <div>
       <h2>Want to be kept in the loop?</h2>
@@ -107,6 +117,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <footer>
   <div class="wrap">

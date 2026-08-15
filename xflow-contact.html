@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-details", "ro-form"],
+  delta: ["ro-form", "ro-details"],
+  cove:  ["ro-form", "ro-details"]
+};
+</script>
 
 
 <nav class="nav">
@@ -61,8 +68,8 @@
 
 <section>
   <div class="wrap">
-        <div class="contact-grid">
-      <div class="form-card">
+        <div class="contact-grid reorder-sections">
+      <div class="form-card ro-form">
         <div class="eyebrow">Send an enquiry</div>
         <h3>One of our consultants will be in touch.</h3>
         <div class="enquiry-tabs">
@@ -79,7 +86,7 @@
         </div>
       </div>
 
-      <div class="details">
+      <div class="details ro-details">
         <div class="detail-block">
           <div class="lbl">Company</div>
           <div class="val mono">info@xflow.co.za</div>

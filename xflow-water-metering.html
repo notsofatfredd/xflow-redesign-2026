@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-compare", "ro-invite", "ro-tech"],
+  delta: ["ro-tech", "ro-compare", "ro-invite"],
+  cove:  ["ro-invite", "ro-tech", "ro-compare"]
+};
+</script>
 
 
 <nav class="nav">
@@ -59,7 +66,8 @@
   </div>
 </header>
 
-<section>
+<div class="reorder-sections">
+<section class="ro-tech">
   <div class="wrap">
         <div class="section-head">
       <div><div class="eyebrow">Metering technology</div><h2>How water is measured.</h2></div>
@@ -114,7 +122,7 @@
   </div>
 </section>
 
-<section class="compare">
+<section class="compare ro-compare">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Choosing a meter</div><h2>Method vs. application.</h2></div>
@@ -136,7 +144,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-invite">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Also part of the programme</div><h2>Water-loss investigations.</h2></div>
@@ -148,6 +156,8 @@
     </div>
   </div>
 </section>
+
+</div>
 
 <section class="cta">
   <div class="wrap cta-inner">
