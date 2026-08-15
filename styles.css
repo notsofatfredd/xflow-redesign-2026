@@ -60,6 +60,24 @@ html[data-concept="onyx"] span.copy-onyx{display:inline;}
 html[data-concept="delta"] span.copy-delta{display:inline;}
 html[data-concept="cove"] span.copy-cove{display:inline;}
 
+/* ---------- section reordering per concept (real structural difference, not palette) ---------- */
+.reorder-sections{display:flex; flex-direction:column;}
+
+/* sectors page: reorder sector cards + delta case-grid as structured list */
+html[data-concept="delta"] .case-grid{grid-template-columns:1fr; gap:0; border-top:1px solid var(--line);}
+html[data-concept="delta"] .case-card{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; border:none; border-bottom:1px solid var(--line); border-radius:0; padding:16px 4px;}
+
+/* onyx: front-load proof - marquee, track record, then markets-as-list, then products */
+html[data-concept="onyx"] .ro-markets .sector-grid{grid-template-columns:1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+html[data-concept="onyx"] .ro-markets .sector{background:var(--paper-2); display:flex; align-items:baseline; gap:16px; padding:14px 20px;}
+html[data-concept="onyx"] .ro-markets .sector p{display:none;}
+
+/* delta: formal segmentation first - markets before marquee, products as a structured list */
+html[data-concept="delta"] .ro-products .pgrid{grid-template-columns:1fr; gap:0; border-top:1px solid var(--line);}
+html[data-concept="delta"] .ro-products .pcard{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; border:none; border-bottom:1px solid var(--line); border-radius:0; padding:16px 4px;}
+
+/* cove: narrative/vision first - about before marquee, evidence follows the story at the end */
+
 /* ---------- delta: institutional / grid-structured traits (borrows City of Cape Town Water & Sanitation trust cues) ---------- */
 html[data-concept="delta"] body{
   background-image:
@@ -183,6 +201,29 @@ p{margin:0;}
 @media (min-width:1px){ .btn:hover{transform:translateY(-1px);} }
 
 .nav-links .current{opacity:1; color:var(--accent); font-weight:600;}
+
+.nav-toggle{
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:32px; height:32px; padding:0; border:1px solid var(--line);
+  background:transparent; border-radius:2px; cursor:pointer;
+}
+.nav-toggle-bar{width:16px; height:1.5px; background:var(--ink); margin:0 auto; transition:transform .2s ease, opacity .2s ease;}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0;}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+.mobile-menu{
+  display:none; flex-direction:column; gap:2px;
+  background:var(--paper); border-bottom:1px solid var(--line);
+  position:sticky; top:65px; z-index:49;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a.navlink, .mobile-menu span.current{
+  padding:14px 32px; font-size:14px; border-bottom:1px solid var(--line);
+  color:var(--ink); text-decoration:none;
+}
+.mobile-menu span.current{color:var(--accent); font-weight:600;}
+.mobile-menu .mobile-cta{margin:16px 32px;}
 
 /* ================= HOME (index.html) ================= */
 .hero{
@@ -339,6 +380,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .sector-grid, .pgrid{grid-template-columns:1fr;}
   .evidence-grid{grid-template-columns:1fr 1fr;}
   .about-grid{grid-template-columns:1fr;}
@@ -427,6 +469,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .founder-grid{grid-template-columns:1fr;}
   .specgrid{grid-template-columns:1fr;}
   .client-grid{grid-template-columns:1fr 1fr;}
@@ -463,6 +506,9 @@ section{padding:72px 0;}
 .etab{flex:1; background:var(--paper); padding:12px 14px; font-size:12.5px; text-align:center; cursor:default;}
 .etab.active{background:var(--accent); color:var(--deep); font-weight:600;}
 .etab .k{display:block; font-family:ui-monospace,monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; margin-bottom:3px;}
+/* Cove: Investor & Partnership route leads by default - aspiration register */
+html[data-concept="cove"] .etab.active{background:var(--paper); color:inherit; font-weight:400;}
+html[data-concept="cove"] .etab:nth-child(2){background:var(--accent); color:var(--deep); font-weight:600;}
 
 .details{display:flex; flex-direction:column; gap:28px;}
 .detail-block{border-left:2px solid var(--line); padding-left:18px;}
@@ -492,6 +538,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .contact-grid{grid-template-columns:1fr;}
 }
 
@@ -549,6 +596,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .post-grid{grid-template-columns:1fr;}
   .starter-list li{flex-direction:column; gap:4px;}
 }
@@ -613,6 +661,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .approw{grid-template-columns:1fr;}
   .catalog-ghost{grid-template-columns:1fr 1fr;}
 }
@@ -678,6 +727,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .sector-body{grid-template-columns:1fr;}
   .case-grid{grid-template-columns:1fr;}
 }
@@ -752,6 +802,7 @@ footer{background:var(--deep); color:var(--on-deep); padding:72px 0 32px; border
 
 @media (max-width:860px){
   .nav-links{display:none;}
+  .nav-toggle{display:flex;}
   .techgrid{grid-template-columns:1fr;}
   .subrow{grid-template-columns:1fr 1fr;}
   .ctable{display:block; overflow-x:auto;}

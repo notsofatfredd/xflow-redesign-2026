@@ -23,6 +23,13 @@
   </div>
 </div>
 <script src="switcher.js" defer></script>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-cta", "ro-latest", "ro-starter"],
+  delta: ["ro-starter", "ro-latest", "ro-cta"],
+  cove:  ["ro-latest", "ro-starter", "ro-cta"]
+};
+</script>
 
 
 <nav class="nav">
@@ -32,10 +39,15 @@
       <a href="xflow-sectors.html" class="navlink">Sectors</a><a href="xflow-water-metering.html" class="navlink">Water Metering</a><a href="xflow-pipe-products.html" class="navlink">Pipe Products</a><a href="xflow-about.html" class="navlink">About</a><span class="current">Insights</span><a href="xflow-contact.html" class="navlink">Contact</a>
     </div>
     <div class="nav-right">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button>
       <a href="xflow-contact.html" class="btn btn-line">Get in Touch</a>
     </div>
   </div>
 </nav>
+<div id="mobile-menu" class="mobile-menu" hidden>
+  <a href="xflow-sectors.html" class="navlink">Sectors</a><a href="xflow-water-metering.html" class="navlink">Water Metering</a><a href="xflow-pipe-products.html" class="navlink">Pipe Products</a><a href="xflow-about.html" class="navlink">About</a><span class="current">Insights</span><a href="xflow-contact.html" class="navlink">Contact</a>
+  <a href="xflow-contact.html" class="btn btn-solid mobile-cta">Get in Touch</a>
+</div>
 
 <header class="pagehead">
   <canvas id="contour"></canvas>
@@ -54,7 +66,8 @@
   </div>
 </header>
 
-<section>
+<div class="reorder-sections">
+<section class="ro-latest">
   <div class="wrap">
 
     <div class="section-head">
@@ -75,7 +88,10 @@
         <div class="date">-- --- 2026</div>
       </div>
     </div>
-
+  </div>
+</section>
+<section class="ro-starter">
+  <div class="wrap">
     <div class="starter-list">
       <div class="section-head" style="margin-bottom:20px;">
         <div><div class="eyebrow">Realistic starting content</div><h2 style="font-size:19px;">What Xflow could publish without new writing effort.</h2></div>
@@ -89,8 +105,7 @@
     </div>
   </div>
 </section>
-
-<section class="cta">
+<section class="cta ro-cta">
   <div class="wrap cta-inner">
     <div>
       <h2>Want to be kept in the loop?</h2>
@@ -102,6 +117,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <footer>
   <div class="wrap">

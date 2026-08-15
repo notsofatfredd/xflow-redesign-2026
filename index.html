@@ -25,6 +25,13 @@
     </div>
   </div>
 </div>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-marquee", "ro-evidence", "ro-markets", "ro-products", "ro-about"],
+  delta: ["ro-markets", "ro-marquee", "ro-products", "ro-evidence", "ro-about"],
+  cove:  ["ro-about", "ro-marquee", "ro-markets", "ro-products", "ro-evidence"]
+};
+</script>
 <script src="switcher.js" defer></script>
 
 
@@ -35,10 +42,15 @@
       <a href="xflow-sectors.html" class="navlink">Sectors</a><a href="xflow-water-metering.html" class="navlink">Water Metering</a><a href="xflow-pipe-products.html" class="navlink">Pipe Products</a><a href="xflow-about.html" class="navlink">About</a><a href="xflow-insights.html" class="navlink">Insights</a><a href="xflow-contact.html" class="navlink">Contact</a>
     </div>
     <div class="nav-right">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button>
       <a href="xflow-contact.html" class="btn btn-line">Get in Touch</a>
     </div>
   </div>
 </nav>
+<div id="mobile-menu" class="mobile-menu" hidden>
+  <a href="xflow-sectors.html" class="navlink">Sectors</a><a href="xflow-water-metering.html" class="navlink">Water Metering</a><a href="xflow-pipe-products.html" class="navlink">Pipe Products</a><a href="xflow-about.html" class="navlink">About</a><a href="xflow-insights.html" class="navlink">Insights</a><a href="xflow-contact.html" class="navlink">Contact</a>
+  <a href="xflow-contact.html" class="btn btn-solid mobile-cta">Get in Touch</a>
+</div>
 
 <section class="hero" style="padding:0;">
   <div class="ghost-watermark" aria-hidden="true">Xflow</div>
@@ -76,7 +88,8 @@
   </div>
 </section>
 
-<div class="marquee-strip" aria-hidden="true">
+<div class="reorder-sections">
+<div class="marquee-strip ro-marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>Civil Construction</span><span>Bulk Water Lines</span><span>Bulk Sewer Lines</span>
     <span>Water Metering</span><span>Pipe Products</span><span>Plumbing &amp; Drainage</span>
@@ -87,7 +100,7 @@
   </div>
 </div>
 
-<section class="sectors">
+<section class="sectors ro-markets">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Who we build for</div><h2>Two markets, one standard.</h2></div>
@@ -112,7 +125,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-products">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">What we deliver</div><h2>Products &amp; services.</h2></div>
@@ -141,7 +154,7 @@
   </div>
 </section>
 
-<section class="evidence">
+<section class="evidence ro-evidence">
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Track record</div><h2 style="color:var(--on-deep)">Evidence, not adjectives.</h2></div>
@@ -167,7 +180,7 @@
   </div>
 </section>
 
-<section>
+<section class="ro-about">
   <div class="wrap">
     <div class="about-grid">
       <div class="about-visual"><canvas id="flowlines"></canvas></div>
@@ -181,6 +194,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <footer>
   <div class="wrap">
