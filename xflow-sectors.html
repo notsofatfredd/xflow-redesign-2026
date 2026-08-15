@@ -22,6 +22,13 @@
     </div>
   </div>
 </div>
+<script>
+window.SECTION_ORDER = {
+  onyx:  ["ro-private", "ro-municipal", "ro-iot"],
+  delta: ["ro-municipal", "ro-private", "ro-iot"],
+  cove:  ["ro-iot", "ro-municipal", "ro-private"]
+};
+</script>
 <script src="switcher.js" defer></script>
 
 
@@ -71,7 +78,8 @@
       </div>
 </section>
 
-<section id="municipal" class="sector-block wrap">
+<div class="reorder-sections">
+<section id="municipal" class="sector-block wrap ro-municipal">
   <div class="sector-head">
     <div><span class="idx mono">SECTOR A</span><h2>Municipal</h2></div>
     <span class="status">Active - proven</span>
@@ -89,7 +97,7 @@
   </div>
 </section>
 
-<section id="private" class="sector-block wrap">
+<section id="private" class="sector-block wrap ro-private">
   <div class="sector-head">
     <div><span class="idx mono">SECTOR B</span><h2>Private &amp; Commercial</h2></div>
     <span class="status">Active - proven</span>
@@ -105,7 +113,7 @@
   </div>
 </section>
 
-<section id="iot" class="sector-block wrap">
+<section id="iot" class="sector-block wrap ro-iot">
   <div class="sector-head">
     <div><span class="idx mono">SECTOR C</span><h2>IoT Water Solutions</h2></div>
     <span class="status">Emerging</span>
@@ -119,6 +127,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <section>
   <div class="wrap">
