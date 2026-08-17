@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Xflow</title>
+<meta name="description" content="Contact Xflow for a general project enquiry or an investor and partnership discussion. Tel +27 21 691 2157, info@xflow.co.za, Lansdowne, Cape Town.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="util-bar">
+  <div class="wrap">
+    <div class="util-left">Xtreme Flow (Pty) Ltd, trading as Xflow &middot; Lansdowne, Cape Town</div>
+    <div class="util-right">
+      <a href="tel:+27216912157">+27 21 691 2157</a>
+      <a href="mailto:info@xflow.co.za">info@xflow.co.za</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Xtreme Flow logo">
+      <span class="brand-text"><span class="name">Xflow</span><span class="sub">Civil &amp; Water Infrastructure</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="water-metering.html">Water Metering</a>
+      <a href="pipe-products.html">Pipe Products</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html" class="nav-cta" aria-current="page">Contact</a>
+    </nav>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <div class="mobile-nav-top">
+    <span class="brand-text" style="color:var(--paper)">Menu</span>
+    <button class="close-btn" aria-label="Close menu">&times;</button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="water-metering.html">Water Metering</a>
+  <a href="pipe-products.html">Pipe Products</a>
+  <a href="insights.html">Insights</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-meta">
+    <a href="tel:+27216912157">+27 21 691 2157</a><br>
+    <a href="mailto:info@xflow.co.za">info@xflow.co.za</a>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="wrap"><a href="index.html">Home</a> / <span aria-current="page">Contact</span></div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div style="max-width:640px; padding-bottom:40px;">
+        <span class="eyebrow">Contact</span>
+        <h1>Two enquiry routes, one team.</h1>
+        <p class="lede">Whatever you're building next, whether it's a project, a partnership, or an investment conversation, reach the team directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="route-card">
+            <div class="ref">Route A</div>
+            <h3>General &amp; Project Enquiry</h3>
+            <p>Site visits, quotes, specification questions and project scoping.</p>
+            <a href="mailto:info@xflow.co.za?subject=General%20%26%20Project%20Enquiry" class="btn btn-solid">Email this route</a>
+          </div>
+          <div class="route-card">
+            <div class="ref">Route B</div>
+            <h3>Investor &amp; Partnership</h3>
+            <p>Partnership discussions and investment enquiries.</p>
+            <a href="mailto:info@xflow.co.za?subject=Investor%20%26%20Partnership%20Enquiry" class="btn btn-solid">Email this route</a>
+          </div>
+          <div class="notice">
+            <span class="notice-label">Both routes reach</span>
+            <p style="margin-bottom:0;">info@xflow.co.za — read by the same team, directly.</p>
+          </div>
+
+          <dl class="contact-details">
+            <dt>Telephone</dt>
+            <dd><a href="tel:+27216912157">+27 21 691 2157</a></dd>
+            <dt>Cell</dt>
+            <dd><a href="tel:+27835882700">+27 83 588 2700</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@xflow.co.za">info@xflow.co.za</a></dd>
+            <dt>Direct line to the founder</dt>
+            <dd><a href="mailto:sulaiman.achmat@yahoo.com">sulaiman.achmat@yahoo.com</a></dd>
+            <dt>Physical address</dt>
+            <dd>Cnr of Jan Smuts Drive &amp; Blomvlei Road, Lansdowne Junction, Induland Crescent, Lansdowne, 7780, Cape Town</dd>
+          </dl>
+        </div>
+
+        <div>
+          <form class="form-block" id="contact-form" action="mailto:info@xflow.co.za" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label for="route">Enquiry route</label>
+              <select id="enquiry-route" name="route">
+                <option>General &amp; Project Enquiry</option>
+                <option>Investor &amp; Partnership</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row">
+              <label for="email">Your email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <input type="hidden" name="subject" value="Xflow enquiry">
+            <div class="form-row">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid">Submit Enquiry &rarr;</button>
+            <p class="form-note">Opens your email client with this enquiry addressed to info@xflow.co.za.</p>
+          </form>
+
+          <iframe class="map-frame" style="margin-top:24px;" loading="lazy"
+            src="https://www.google.com/maps?q=Jan+Smuts+Drive+%26+Blomvlei+Road,+Lansdowne+Junction,+Lansdowne,+7780,+Cape+Town&output=embed"
+            title="Xflow premises, Lansdowne Junction, Cape Town"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Xflow</div>
+        <p>Xtreme Flow (Pty) Ltd &middot; Civil &amp; water infrastructure &middot; Cape Town, South Africa. Founded 2015.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="water-metering.html">Water Metering</a></li>
+          <li><a href="pipe-products.html">Pipe Products</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+27216912157">+27 21 691 2157</a></li>
+          <li><a href="tel:+27835882700">+27 83 588 2700</a></li>
+          <li><a href="mailto:info@xflow.co.za">info@xflow.co.za</a></li>
+          <li>Cnr Jan Smuts Drive &amp; Blomvlei Road, Lansdowne Junction, Lansdowne, 7780, Cape Town</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Xflow. All rights reserved.</span>
+      <span>Cape Town &middot; Western Cape &middot; South Africa</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
