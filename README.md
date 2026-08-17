@@ -1,48 +1,38 @@
-# Xflow — Concept Demo
+# Independent Triangulated Concepts (Onyx / Delta / Cove)
 
-A redesign of xflow.co.za (Cape Town civil engineering / water metering / pipe products), built as
-a 3-concept switcher demo. This is the same technique used for the earlier Always Plumbing &
-Drainage cold-call demo, applied here to Xflow's own site with the owner's permission.
+This branch replaces the shared switcher/concept approach (`triangulated-concepts`
+branch, `styles.css` + `switcher.js` + `xflow-*.html`) with **three fully
+independent site builds**, each in its own top-level folder with its own
+HTML/CSS/JS and no shared code between them.
 
-## What's here
+## Why
 
-Seven real pages (`index.html`, `xflow-about.html`, `xflow-contact.html`, `xflow-insights.html`,
-`xflow-pipe-products.html`, `xflow-sectors.html`, `xflow-water-metering.html`), one shared
-`styles.css` and `switcher.js`, and `xflow-wireframe.html` (an internal working file, not a real
-page — left out of the concept system).
+The switcher approach ("1 base + variables") kept reading as "one site, 3 color
+themes" even after structural patches (DOM reordering, mobile nav fixes). The
+fix was true build isolation: three separate agent instances, each given only
+a neutral facts document (real company facts, contact details, page list — no
+design direction) plus its own real triangulation target to research
+independently, with no visibility into the other two concepts or the prior
+repo/PR history.
 
-Live: https://notsofatfredd.github.io/xflow-redesign-2026/
+## Folders
 
-## The 3 concepts
+- **`onyx/`** — rival/urgency lens, researched against **Umdla Civils &
+  Plumbing** (direct regional competitor). Dark theme, hard-claim hero,
+  evidence strip, flat numbered specialism list.
+- **`delta/`** — municipal/institutional lens, researched against the
+  **City of Cape Town Water & Sanitation** department. Light paper theme,
+  ink-navy serif headings, breadcrumb trails, real spec/client tables.
+- **`cove/`** — aspirational/sector-leader lens, researched against
+  **CSV Construction**. Full-bleed photo hero, navy stat-strip band,
+  divisional card-grid structure.
 
-Each page has a sticky **"Demo harness — not part of the site"** toolbar at the top with three
-tabs. This toolbar itself is not part of the real site — it exists only so a reviewer can switch
-between concepts. Everything below it is the actual page.
+Same underlying company facts and real photos across all three — but
+genuinely different information architecture, not a palette swap. E.g. the
+same six water-metering technologies render as stacked numbered rows (Onyx),
+a list + comparison table (Delta), and a 2-column card grid (Cove).
 
-The three concepts aren't arbitrary aesthetic options — each is triangulated against a real
-reference point, and targets a distinct emotional register:
+## Status
 
-- **Onyx** — modeled on **Umdla Civils & Plumbing**, a real Cape Town-region contractor doing
-  near-identical work. Emotion: competitive urgency ("someone your customers already compare you
-  to looks strong").
-- **Delta** — borrows the visual trust cues of **City of Cape Town Water and Sanitation**, Xflow's
-  actual municipal jurisdiction (not its dated execution — just the institutional trust register).
-  Emotion: trust, institutional strength.
-- **Cove** — modeled on **CSV Construction**, a real Western Cape top-5 civil engineering
-  contractor one tier above Xflow. Emotion: ambition, aspiration.
-
-None of these reference companies are copied, impersonated, or claimed as affiliated with Xflow —
-each concept just borrows the *emotional register* of its reference, expressed through Xflow's own
-real content, photos, and logo.
-
-## Content policy
-
-All copy, stats, client names, and photos are real, pulled from xflow.co.za and Xflow's own
-material (used with the owner's permission) — nothing fabricated. Where a page currently has a
-genuine gap (no real content exists yet for something), it's marked with an honest placeholder or
-a "Source check" callout rather than invented to fill the space.
-
-## Social templates
-
-`social/` has matching Instagram/LinkedIn-format graphic templates for all 3 concepts — see
-`social/README.md`.
+Draft — for visual review before deciding which direction(s) to carry
+forward into the client pitch.
