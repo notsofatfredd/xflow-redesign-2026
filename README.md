@@ -1,38 +1,24 @@
-# Independent Triangulated Concepts (Onyx / Delta / Cove)
+# Xflow — Solar Navy Build
 
-This branch replaces the shared switcher/concept approach (`triangulated-concepts`
-branch, `styles.css` + `switcher.js` + `xflow-*.html`) with **three fully
-independent site builds**, each in its own top-level folder with its own
-HTML/CSS/JS and no shared code between them.
+A focused one-page website for Xflow, adapted from the Solar Navy Sky Blue template.
 
-## Why
+## Current build
 
-The switcher approach ("1 base + variables") kept reading as "one site, 3 color
-themes" even after structural patches (DOM reordering, mobile nav fixes). The
-fix was true build isolation: three separate agent instances, each given only
-a neutral facts document (real company facts, contact details, page list — no
-design direction) plus its own real triangulation target to research
-independently, with no visibility into the other two concepts or the prior
-repo/PR history.
+- Entry point: `index.html`
+- Mobile layout: `mobile.css`, up to 767px
+- Desktop layout: `desktop.css`, from 768px
+- Palette: Solar `#FFF4D6`, Navy `#10233F`, Sky Blue `#7EC8F8`
+- Xflow assets: `assets/xflow/`
+- AXIEL / ATLAS OS footer asset: `assets/brand/axiel-mark.svg`
 
-## Folders
+The page uses Xflow's supplied logo, fleet, fieldwork and KLINGER product imagery. Company facts and contact details are drawn from the previous Xflow concept builds in this repository.
 
-- **`onyx/`** — rival/urgency lens, researched against **Umdla Civils &
-  Plumbing** (direct regional competitor). Dark theme, hard-claim hero,
-  evidence strip, flat numbered specialism list.
-- **`delta/`** — municipal/institutional lens, researched against the
-  **City of Cape Town Water & Sanitation** department. Light paper theme,
-  ink-navy serif headings, breadcrumb trails, real spec/client tables.
-- **`cove/`** — aspirational/sector-leader lens, researched against
-  **CSV Construction**. Full-bleed photo hero, navy stat-strip band,
-  divisional card-grid structure.
+## Content included
 
-Same underlying company facts and real photos across all three — but
-genuinely different information architecture, not a palette swap. E.g. the
-same six water-metering technologies render as stacked numbered rows (Onyx),
-a list + comparison table (Delta), and a 2-column card grid (Cove).
+- Pressure management, water metering and civil engineering positioning
+- Founder Sulaiman Achmat's 20+ years inside City of Cape Town water systems
+- Xflow's 2015 founding date
+- Chamber construction, fleet, Western Cape fieldwork and KLINGER pipe products
+- `info@xflow.co.za`, `+27 21 691 2157`, `+27 83 588 2700`, Lansdowne, Cape Town
 
-## Status
-
-Draft — for visual review before deciding which direction(s) to carry
-forward into the client pitch.
+The `onyx/`, `delta/`, `cove/` and legacy root files remain as historical source material. They are not loaded by the current page.
