@@ -1,24 +1,26 @@
-# Xflow — Solar Navy Build
+# Xflow Multi-page Preview
 
-A focused one-page website for Xflow, adapted from the Solar Navy Sky Blue template.
+An intentionally distinct mobile and desktop website for Xflow, built from the Solar Navy Sky Blue design system and the September 2026 DevOS audit.
 
-## Current build
+## Routes
 
-- Entry point: `index.html`
-- Mobile layout: `mobile.css`, up to 767px
-- Desktop layout: `desktop.css`, from 768px
-- Palette: Solar `#FFF4D6`, Navy `#10233F`, Sky Blue `#7EC8F8`
-- Xflow assets: `assets/xflow/`
-- AXIEL / ATLAS OS footer asset: `assets/brand/axiel-mark.svg`
+- `index.html` — Home
+- `services.html` — Services
+- `water-metering.html` — Water Metering detail
+- `pipe-products.html` — Pipe Products
+- `projects.html` — Project evidence
+- `about.html` — About
+- `contact.html` — Contact
 
-The page uses Xflow's supplied logo, fleet, fieldwork and KLINGER product imagery. Company facts and contact details are drawn from the previous Xflow concept builds in this repository.
+## Experience architecture
 
-## Content included
+- `mobile.css` controls the dedicated mobile composition up to 767px.
+- `desktop.css` controls the dedicated desktop composition from 768px.
+- Each route contains separate mobile and desktop experience markup while keeping the same verified facts and core actions.
+- The palette uses Navy `#10233F`, Mineral `#F4F1E8`, Utility Blue `#225EA8`, Flow Sky `#7EC8F8` and White `#FFFFFF`.
 
-- Pressure management, water metering and civil engineering positioning
-- Founder Sulaiman Achmat's 20+ years inside City of Cape Town water systems
-- Xflow's 2015 founding date
-- Chamber construction, fleet, Western Cape fieldwork and KLINGER pipe products
-- `info@xflow.co.za`, `+27 21 691 2157`, `+27 83 588 2700`, Lansdowne, Cape Town
+## Evidence boundary
 
-The `onyx/`, `delta/`, `cove/` and legacy root files remain as historical source material. They are not loaded by the current page.
+The supplied Xtreme Flow crest, fleet, fieldwork and pipe-product imagery are used throughout. Company facts and contact details come from the verified source material in the repository audit. Unsupported client names, project outcomes, accreditations and partner claims are intentionally excluded.
+
+This GitHub Pages build is a review preview. `robots.txt` blocks crawler indexing until production release approval.
