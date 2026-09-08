@@ -320,3 +320,292 @@
   .d-detail-hero__grid { gap: 38px; }
   .d-contact-grid { grid-template-columns: 1fr; }
 }
+
+/* Tabled correction pass. The Solar / Navy / Sky palette remains unchanged. */
+@media (max-width: 767px) {
+  /* Show the supplied crest in its real colours wherever it appears. */
+  .m-brand img,
+  .m-footer__brand img {
+    padding: 3px;
+    background: var(--solar);
+    filter: none;
+  }
+
+  /* Home: turn the proof dashboard into one editorial experience statement. */
+  body:has(.m-hero) .m-hero {
+    min-height: 820px;
+    padding-bottom: 0;
+  }
+  body:has(.m-hero) .m-hero__image {
+    left: 0;
+    right: 0;
+    bottom: 170px;
+    width: 100%;
+    height: 390px;
+    border: 0;
+    border-top: 1px solid var(--solar);
+  }
+  body:has(.m-hero) .m-proofbar {
+    position: absolute;
+    inset: auto 0 0;
+    display: block;
+    width: 100%;
+    height: 170px;
+    padding: 25px 20px;
+    color: var(--solar);
+    background: var(--navy);
+    border: 0;
+    border-top: 1px solid rgba(255,244,214,.45);
+  }
+  body:has(.m-hero) .m-proofbar div:first-child {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: end;
+    gap: 16px;
+    padding: 0;
+    border: 0;
+  }
+  body:has(.m-hero) .m-proofbar div:nth-child(n+2) { display: none; }
+  body:has(.m-hero) .m-proofbar strong {
+    color: var(--sky);
+    font-size: 72px;
+    line-height: .8;
+  }
+  body:has(.m-hero) .m-proofbar span {
+    color: var(--solar);
+    font-family: var(--serif);
+    font-size: 23px;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+  }
+  body:has(.m-hero) .m-proofbar::after {
+    content: "Xflow established · 2015 · Cape Town";
+    display: block;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,244,214,.35);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* Supporting copy and factual labels return to the sans-serif system. */
+  .m-card p,
+  .m-spec p,
+  .m-product p,
+  .m-list li { font-family: var(--sans); }
+
+  /* Services: an indexed sequence, not a repeated card stack. */
+  body:has(#pressure) .m-card {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 8px 12px;
+    align-items: baseline;
+  }
+  body:has(#pressure) .m-card h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 21px;
+    font-weight: 700;
+  }
+  body:has(#pressure) .m-card p,
+  body:has(#pressure) .m-card__link { grid-column: 2; }
+
+  /* Metering and products: factual matrix / rail typography. */
+  .m-spec h3,
+  .m-product h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+  }
+
+  /* Projects: larger, more authoritative field imagery. */
+  body:has(.m-menu a[href="projects.html"][aria-current="page"]) .m-stack:has(> .m-photo-card) > .m-photo-card {
+    flex-basis: 94%;
+  }
+  body:has(.m-menu a[href="projects.html"][aria-current="page"]) .m-photo-card img { height: 440px; }
+}
+
+@media (min-width: 768px) {
+  /* Display headlines stay editorial; section headings are no longer globally uppercase. */
+  .d-heading { text-transform: none; }
+
+  /* Show the supplied crest in full colour on a light identity field. */
+  .d-brand img,
+  .d-footer__brand img {
+    padding: 4px;
+    background: var(--solar);
+    filter: none;
+  }
+  .d-detail-callout {
+    position: relative;
+    min-height: 210px;
+    padding-right: 46%;
+    overflow: hidden;
+  }
+  .d-detail-callout::after {
+    content: "";
+    position: absolute;
+    inset: 16px 14px 16px auto;
+    width: 40%;
+    background: var(--solar) url("assets/xflow/logo.png") center / contain no-repeat;
+  }
+
+  /* Home: no four-cell dashboard; one large experience statement instead. */
+  body:has(.d-hero) .d-proofbar {
+    display: block;
+    padding: 74px max(56px,calc((100vw - 1324px)/2));
+    color: var(--solar);
+    background: var(--navy);
+    border-top: 1px solid rgba(255,244,214,.4);
+    border-bottom: 0;
+  }
+  body:has(.d-hero) .d-proofbar div:first-child {
+    display: grid;
+    grid-template-columns: .6fr 1.4fr;
+    align-items: end;
+    gap: 70px;
+    padding: 0;
+    border: 0;
+  }
+  body:has(.d-hero) .d-proofbar div:nth-child(n+2) { display: none; }
+  body:has(.d-hero) .d-proofbar strong {
+    color: var(--sky);
+    font-size: clamp(150px,18vw,270px);
+    line-height: .64;
+    letter-spacing: -.08em;
+  }
+  body:has(.d-hero) .d-proofbar span {
+    color: var(--solar);
+    font-family: var(--serif);
+    font-size: clamp(48px,4.6vw,72px);
+    letter-spacing: -.04em;
+    line-height: .88;
+    text-transform: none;
+  }
+  body:has(.d-hero) .d-proofbar::after {
+    content: "Xflow established · 2015 · Cape Town";
+    display: block;
+    margin-top: 54px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,244,214,.35);
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  /* Supporting copy and factual labels return to sans-serif. */
+  .d-card p,
+  .d-spec p,
+  .d-product p,
+  .d-list li { font-family: var(--sans); }
+
+  /* Services: one indexed sequence and a single large working-method statement. */
+  body:has(#pressure) .d-grid-4 { grid-template-columns: 1fr; }
+  body:has(#pressure) .d-card {
+    display: grid;
+    grid-template-columns: 80px .75fr 1.2fr auto;
+    align-items: center;
+    min-height: 145px;
+    gap: 28px;
+  }
+  body:has(#pressure) .d-card h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 700;
+  }
+  body:has(#pressure) .d-card p { font-family: var(--sans); }
+  body:has(#pressure) .d-section--navy .d-intro {
+    grid-template-columns: 1.2fr .8fr;
+    align-items: end;
+    margin-bottom: 0;
+  }
+
+  /* Water metering: editorial comparison matrix. */
+  .d-spec-grid {
+    grid-template-columns: repeat(2,1fr);
+    counter-reset: meter-spec;
+  }
+  .d-spec {
+    min-height: 260px;
+    counter-increment: meter-spec;
+  }
+  .d-spec::before {
+    content: "0" counter(meter-spec);
+    display: block;
+    margin-bottom: 48px;
+    color: var(--utility);
+    font-size: 11px;
+    letter-spacing: .16em;
+  }
+  .d-spec h3 {
+    font-family: var(--sans);
+    font-size: 23px;
+    font-weight: 700;
+  }
+
+  /* Pipe products: a product mosaic with stronger category hierarchy. */
+  .d-product-grid {
+    grid-template-columns: 1.15fr .85fr .85fr;
+    grid-auto-flow: dense;
+  }
+  .d-product:first-child { grid-row: span 2; }
+  .d-product:first-child img { height: 420px; aspect-ratio: auto; }
+  .d-product h3 {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  /* Projects: a full-width photographic sequence. */
+  body:has(.d-nav a[href="projects.html"][aria-current="page"]) .d-photo-grid {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    grid-template-columns: 1.45fr .55fr;
+    grid-template-rows: 390px 390px;
+  }
+  body:has(.d-nav a[href="projects.html"][aria-current="page"]) .d-photo-card div { max-width: 620px; }
+
+  /* About: one dominant field image plus a large experience statement. */
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-split { grid-template-columns: 1.35fr .65fr; }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-split img { height: 680px; }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-grid-3 { grid-template-columns: 1.4fr .8fr .8fr; }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-card:first-child .d-card__num {
+    color: var(--utility);
+    font-family: var(--serif);
+    font-size: 92px;
+    line-height: .8;
+  }
+
+  /* Contact: asymmetric Solar / Sky closing composition. */
+  body:has(.d-header__cta[aria-current="page"]) .d-contact-grid { grid-template-columns: .72fr 1.28fr; }
+  body:has(.d-header__cta[aria-current="page"]) .d-contact-grid > div:last-child {
+    display: flex;
+    min-height: 620px;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .d-detail-callout { min-height: 180px; padding-right: 44%; }
+  body:has(#pressure) .d-card {
+    grid-template-columns: 60px 1fr;
+    gap: 12px 20px;
+  }
+  body:has(#pressure) .d-card h2,
+  body:has(#pressure) .d-card p,
+  body:has(#pressure) .d-card__link { grid-column: 2; }
+  .d-product-grid { grid-template-columns: repeat(2,1fr); }
+  .d-product:first-child { grid-row: auto; grid-column: span 2; }
+  .d-product:first-child img { height: 320px; }
+  body:has(.d-nav a[href="projects.html"][aria-current="page"]) .d-photo-grid {
+    grid-template-rows: 310px 310px;
+  }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-split { grid-template-columns: 1fr; }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-split img { height: 520px; }
+  body:has(.d-nav a[href="about.html"][aria-current="page"]) .d-grid-3 { grid-template-columns: 1fr; }
+  body:has(.d-header__cta[aria-current="page"]) .d-contact-grid { grid-template-columns: 1fr; }
+  body:has(.d-header__cta[aria-current="page"]) .d-contact-grid > div:last-child { min-height: 480px; }
+}
