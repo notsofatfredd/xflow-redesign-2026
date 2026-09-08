@@ -14,10 +14,11 @@ An intentionally distinct mobile and desktop website for Xflow, built from the S
 
 ## Experience architecture
 
-- `mobile.css` controls the dedicated mobile composition up to 767px.
-- `desktop.css` controls the dedicated desktop composition from 768px.
+- `mobile.css` provides the mobile component foundation up to 767px.
+- `desktop.css` provides the desktop component foundation from 768px.
+- `concept.css` restores and expands the retained Solar Navy editorial design across every route.
 - Each route contains separate mobile and desktop experience markup while keeping the same verified facts and core actions.
-- The palette uses Navy `#10233F`, Mineral `#F4F1E8`, Utility Blue `#225EA8`, Flow Sky `#7EC8F8` and White `#FFFFFF`.
+- The visual palette returns to Solar `#FFF4D6`, Navy `#10233F` and Sky Blue `#7EC8F8`; Utility Blue `#225EA8` is reserved for readable functional accents.
 
 ## Evidence boundary
 
