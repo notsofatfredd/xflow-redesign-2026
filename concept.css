@@ -788,7 +788,7 @@
 
 /* Homepage concept pass: Infrastructure in Motion.
    A bolder water-network composition layered over the retained architecture. */
-@media (max-width: 0px) {
+@media (max-width: 767px) {
   body:has(.m-hero) .m-hero::before {
     width: 42%;
     height: 54%;
@@ -820,7 +820,7 @@
   body:has(.m-hero) .m-photo-card:first-child { flex-basis: 94%; }
 }
 
-@media (min-width: 99999px) {
+@media (min-width: 768px) {
   body:has(.d-hero) .d-hero { min-height: 760px; overflow: hidden; }
   body:has(.d-hero) .d-hero__grid { min-height: 670px; grid-template-columns: 54% 46%; }
   body:has(.d-hero) .d-hero__copy { position: relative; z-index: 3; padding-top: 105px; }
@@ -906,4 +906,56 @@
   .d-spec,
   .d-product,
   .d-contact-grid > div { background-image: none; }
+}
+
+/* Energy pass: make material and movement visible without replacing the system. */
+@media (max-width: 767px) {
+  body:has(.m-hero) .m-hero,
+  body:has(.m-hero) .m-footer {
+    background-image:
+      linear-gradient(rgba(16,35,63,.56), rgba(16,35,63,.56)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+  }
+  body:has(.m-hero) main > .m-section:nth-of-type(2) {
+    background-image:
+      linear-gradient(rgba(255,244,214,.72), rgba(255,244,214,.72)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+  }
+  body:has(.m-hero) .m-card {
+    transition: padding-left .25s ease, color .25s ease, background-color .25s ease;
+  }
+  body:has(.m-hero) .m-card:active {
+    padding-left: 18px;
+    color: var(--navy);
+    background: var(--sky);
+  }
+  body:has(.m-hero) .m-photo-card img { transition: transform .55s ease, filter .55s ease; }
+  body:has(.m-hero) .m-photo-card:active img { transform: scale(1.045); filter: saturate(.95) contrast(1.08); }
+}
+
+@media (min-width: 768px) {
+  body:has(.d-hero) .d-hero,
+  body:has(.d-hero) .d-footer {
+    background-image:
+      linear-gradient(rgba(16,35,63,.54), rgba(16,35,63,.54)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+  }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) {
+    background-image:
+      linear-gradient(rgba(255,244,214,.70), rgba(255,244,214,.70)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+  }
+  body:has(.d-hero) .d-card {
+    transition: color .25s ease, background-color .25s ease, transform .25s ease;
+  }
+  body:has(.d-hero) .d-card:hover { transform: translateY(-8px); }
+  body:has(.d-hero) .d-photo-card img { transition: transform .65s ease, filter .65s ease; }
+  body:has(.d-hero) .d-photo-card:hover img { transform: scale(1.055); filter: saturate(.95) contrast(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:has(.d-hero) .d-card,
+  body:has(.d-hero) .d-photo-card img,
+  body:has(.m-hero) .m-card,
+  body:has(.m-hero) .m-photo-card img { transition: none; }
 }
