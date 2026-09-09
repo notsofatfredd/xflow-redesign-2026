@@ -907,3 +907,73 @@
   .d-product,
   .d-contact-grid > div { background-image: none; }
 }
+
+/* Palette hierarchy study: Navy leads, Sky moves, concrete supports,
+   Solar becomes a deliberate accent rather than the page canvas. */
+@media (max-width: 767px) {
+  :root { --concrete: #f1f3f2; }
+  .mobile-experience { background: var(--concrete); }
+  .m-section,
+  .m-section--paper {
+    background-color: var(--concrete);
+    background-image:
+      linear-gradient(rgba(241,243,242,.82), rgba(241,243,242,.82)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+  }
+  .m-card,
+  .m-spec,
+  .m-product { background-color: rgba(255,255,255,.48); }
+  body:has(.m-hero) main > .m-section:nth-of-type(2) {
+    color: var(--solar);
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.72), rgba(16,35,63,.72)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+  }
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-kicker,
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-copy,
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-card,
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-card p,
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-card__link { color: var(--solar); }
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-card {
+    background: transparent;
+    border-color: rgba(255,244,214,.42);
+  }
+  body:has(.m-hero) main > .m-section:nth-of-type(2) .m-card__num { color: var(--sky); }
+}
+
+@media (min-width: 768px) {
+  :root { --concrete: #f1f3f2; }
+  body { background: var(--concrete); }
+  .d-section,
+  .d-section--paper {
+    background-color: var(--concrete);
+    background-image:
+      linear-gradient(rgba(241,243,242,.84), rgba(241,243,242,.84)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+  }
+  .d-card,
+  .d-spec,
+  .d-product,
+  .d-contact-grid > div { background-color: rgba(255,255,255,.55); }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) {
+    color: var(--solar);
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.72), rgba(16,35,63,.72)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+  }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-kicker,
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-intro p,
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card,
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card p,
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card__link { color: var(--solar); }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-grid-4 {
+    border-color: rgba(255,244,214,.45);
+    background: rgba(255,244,214,.45);
+  }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card { background: var(--navy); }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card:hover { color: var(--navy); background: var(--sky); }
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card:hover p,
+  body:has(.d-hero) main > .d-section:nth-of-type(2) .d-card:hover .d-card__link { color: var(--navy); }
+}
