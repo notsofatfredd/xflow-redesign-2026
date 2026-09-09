@@ -609,3 +609,301 @@
   body:has(.d-header__cta[aria-current="page"]) .d-contact-grid { grid-template-columns: 1fr; }
   body:has(.d-header__cta[aria-current="page"]) .d-contact-grid > div:last-child { min-height: 480px; }
 }
+
+/* Infrastructure texture pass — depth from the locked palette, not new colour. */
+@media (max-width: 767px) {
+  .m-section,
+  .m-section--paper {
+    background-image:
+      linear-gradient(rgba(16,35,63,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,35,63,.045) 1px, transparent 1px),
+      radial-gradient(circle at 15% 18%, rgba(16,35,63,.08) 0 1px, transparent 1.5px);
+    background-size: 28px 28px, 28px 28px, 11px 11px;
+  }
+
+  .m-hero,
+  .m-detail-hero,
+  .m-section--navy,
+  .m-footer {
+    background-image:
+      linear-gradient(rgba(255,244,214,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,244,214,.045) 1px, transparent 1px),
+      repeating-linear-gradient(135deg, transparent 0 18px, rgba(126,200,248,.035) 18px 19px);
+    background-size: 34px 34px, 34px 34px, auto;
+  }
+
+  .m-section--blue {
+    background-image:
+      linear-gradient(rgba(16,35,63,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,35,63,.08) 1px, transparent 1px),
+      radial-gradient(circle at 82% 22%, rgba(16,35,63,.12) 0 1px, transparent 1.5px);
+    background-size: 32px 32px, 32px 32px, 13px 13px;
+  }
+
+  .m-card,
+  .m-spec,
+  .m-product {
+    background-image: repeating-linear-gradient(135deg, transparent 0 12px, rgba(16,35,63,.025) 12px 13px);
+  }
+
+  .m-photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,244,214,.035) 5px 6px);
+  }
+}
+
+@media (min-width: 768px) {
+  .d-section,
+  .d-section--paper {
+    background-image:
+      linear-gradient(rgba(16,35,63,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,35,63,.04) 1px, transparent 1px),
+      radial-gradient(circle at 18% 22%, rgba(16,35,63,.07) 0 1px, transparent 1.5px);
+    background-size: 38px 38px, 38px 38px, 13px 13px;
+  }
+
+  .d-hero,
+  .d-detail-hero,
+  .d-section--navy,
+  .d-footer {
+    background-image:
+      linear-gradient(rgba(255,244,214,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,244,214,.04) 1px, transparent 1px),
+      repeating-linear-gradient(135deg, transparent 0 24px, rgba(126,200,248,.03) 24px 25px);
+    background-size: 46px 46px, 46px 46px, auto;
+  }
+
+  .d-section--blue {
+    background-image:
+      linear-gradient(rgba(16,35,63,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,35,63,.07) 1px, transparent 1px),
+      radial-gradient(circle at 82% 20%, rgba(16,35,63,.1) 0 1px, transparent 1.5px);
+    background-size: 42px 42px, 42px 42px, 15px 15px;
+  }
+
+  .d-card,
+  .d-spec,
+  .d-product,
+  .d-contact-grid > div {
+    background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(16,35,63,.022) 14px 15px);
+  }
+
+  .d-photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, transparent 0 6px, rgba(255,244,214,.03) 6px 7px);
+  }
+}
+
+/* Real material texture assets replace the preliminary CSS pattern study. */
+@media (max-width: 767px) {
+  .m-section,
+  .m-section--paper {
+    background-color: var(--solar);
+    background-image:
+      linear-gradient(rgba(255,244,214,.76), rgba(255,244,214,.76)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 620px 620px;
+  }
+
+  .m-hero,
+  .m-detail-hero,
+  .m-section--navy,
+  .m-footer {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.58), rgba(16,35,63,.58)),
+      url("assets/xflow/texture-navy.jpg");
+    background-size: auto, 640px 640px;
+  }
+
+  .m-section--blue {
+    background-color: var(--sky);
+    background-image:
+      linear-gradient(rgba(126,200,248,.74), rgba(126,200,248,.74)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 620px 620px;
+    background-blend-mode: normal, multiply;
+  }
+
+  .m-card,
+  .m-spec,
+  .m-product {
+    background-image:
+      linear-gradient(rgba(255,244,214,.7), rgba(255,244,214,.7)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 520px 520px;
+  }
+
+  .m-photo-card::after { display: none; }
+}
+
+@media (min-width: 768px) {
+  .d-section,
+  .d-section--paper {
+    background-color: var(--solar);
+    background-image:
+      linear-gradient(rgba(255,244,214,.78), rgba(255,244,214,.78)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 760px 760px;
+  }
+
+  .d-hero,
+  .d-detail-hero,
+  .d-section--navy,
+  .d-footer {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.6), rgba(16,35,63,.6)),
+      url("assets/xflow/texture-navy.jpg");
+    background-size: auto, 800px 800px;
+  }
+
+  .d-section--blue {
+    background-color: var(--sky);
+    background-image:
+      linear-gradient(rgba(126,200,248,.76), rgba(126,200,248,.76)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 760px 760px;
+    background-blend-mode: normal, multiply;
+  }
+
+  .d-card,
+  .d-spec,
+  .d-product,
+  .d-contact-grid > div {
+    background-image:
+      linear-gradient(rgba(255,244,214,.72), rgba(255,244,214,.72)),
+      url("assets/xflow/texture-paper.jpg");
+    background-size: auto, 620px 620px;
+  }
+
+  .d-photo-card::after { display: none; }
+}
+
+/* Homepage concept pass: Infrastructure in Motion.
+   A bolder water-network composition layered over the retained architecture. */
+@media (max-width: 0px) {
+  body:has(.m-hero) .m-hero::before {
+    width: 42%;
+    height: 54%;
+    clip-path: polygon(34% 0,100% 0,100% 100%,0 77%);
+  }
+  body:has(.m-hero) .m-hero::after {
+    top: 96px;
+    right: -74px;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(255,244,214,.65);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 0 22px rgba(126,200,248,.08), 0 0 0 44px rgba(126,200,248,.05);
+  }
+  body:has(.m-hero) .m-title { font-size: clamp(60px,16.5vw,78px); line-height: .76; }
+  body:has(.m-hero) .m-title::after {
+    content: "FLOW / PRESSURE / CONTROL";
+    display: block;
+    width: 52%;
+    margin: 30px 0 0 auto;
+    color: var(--solar);
+    font: 10px/1.4 var(--sans);
+    letter-spacing: .18em;
+  }
+  body:has(.m-hero) .m-hero__image { filter: saturate(.7) contrast(1.18); }
+  body:has(.m-hero) .m-section:nth-of-type(2) .m-card:nth-child(even) { padding-left: 42px; }
+  body:has(.m-hero) .m-section:nth-of-type(2) .m-card h3 { font-size: 36px; }
+  body:has(.m-hero) .m-photo-card:first-child { flex-basis: 94%; }
+}
+
+@media (min-width: 99999px) {
+  body:has(.d-hero) .d-hero { min-height: 760px; overflow: hidden; }
+  body:has(.d-hero) .d-hero__grid { min-height: 670px; grid-template-columns: 54% 46%; }
+  body:has(.d-hero) .d-hero__copy { position: relative; z-index: 3; padding-top: 105px; }
+  body:has(.d-hero) .d-title { max-width: 880px; font-size: clamp(86px,8.2vw,132px); line-height: .73; }
+  body:has(.d-hero) .d-title span { margin-left: 11%; }
+  body:has(.d-hero) .d-title::after {
+    content: "FLOW / PRESSURE / CONTROL";
+    display: block;
+    margin: 44px 0 0 52%;
+    color: var(--solar);
+    font: 10px/1.4 var(--sans);
+    letter-spacing: .2em;
+  }
+  body:has(.d-hero) .d-hero__visual { position: relative; overflow: visible; }
+  body:has(.d-hero) .d-hero__visual::before,
+  body:has(.d-hero) .d-hero__visual::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    border: 1px solid rgba(255,244,214,.72);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  body:has(.d-hero) .d-hero__visual::before { width: 430px; height: 430px; left: -112px; top: 74px; }
+  body:has(.d-hero) .d-hero__visual::after { width: 520px; height: 520px; left: -157px; top: 29px; border-color: rgba(126,200,248,.35); }
+  body:has(.d-hero) .d-hero__visual img { filter: saturate(.65) contrast(1.2); transform: scale(1.03); }
+  body:has(.d-hero) .d-grid-4 { grid-template-columns: 1.35fr .65fr 1fr; grid-template-rows: repeat(2,240px); }
+  body:has(.d-hero) .d-grid-4 .d-card { min-height: 0; }
+  body:has(.d-hero) .d-grid-4 .d-card:first-child { grid-row: span 2; background-color: var(--sky); }
+  body:has(.d-hero) .d-grid-4 .d-card:last-child { grid-column: 2 / span 2; }
+  body:has(.d-hero) .d-grid-4 .d-card h3 { margin-top: 30px; font-size: 38px; }
+  body:has(.d-hero) .d-grid-4 .d-card:first-child h3 { margin-top: 100px; font-size: 58px; line-height: .9; }
+  body:has(.d-hero) .d-photo-grid { grid-template-columns: 1.5fr .7fr; grid-template-rows: 330px 330px; }
+  body:has(.d-hero) .d-photo-card:first-child { grid-row: span 2; }
+  body:has(.d-hero) .d-photo-card:first-child h3 { font-size: 48px; }
+}
+
+/* Xflow material world: real infrastructure surfaces, original layout retained. */
+@media (max-width: 767px) {
+  .m-section,
+  .m-section--paper {
+    background-color: var(--solar);
+    background-image:
+      linear-gradient(rgba(255,244,214,.84), rgba(255,244,214,.84)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+    background-size: auto, 900px auto;
+  }
+  .m-hero,
+  .m-detail-hero,
+  .m-section--navy,
+  .m-footer {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.72), rgba(16,35,63,.72)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+    background-size: auto, 920px auto;
+  }
+  .m-card,
+  .m-spec,
+  .m-product { background-image: none; }
+}
+
+@media (min-width: 768px) {
+  .d-section,
+  .d-section--paper {
+    background-color: var(--solar);
+    background-image:
+      linear-gradient(rgba(255,244,214,.86), rgba(255,244,214,.86)),
+      url("assets/xflow/texture-mineral-concrete-v2.png");
+    background-size: auto, 1500px auto;
+  }
+  .d-hero,
+  .d-detail-hero,
+  .d-section--navy,
+  .d-footer {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(16,35,63,.70), rgba(16,35,63,.70)),
+      url("assets/xflow/texture-pipe-metal-v2.png");
+    background-size: auto, 1600px auto;
+  }
+  .d-card,
+  .d-spec,
+  .d-product,
+  .d-contact-grid > div { background-image: none; }
+}
