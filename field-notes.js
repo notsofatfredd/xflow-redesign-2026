@@ -1,0 +1,73 @@
+(function(){
+  const KEY='xflowJobNotesV1';
+  const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  const mobile=document.querySelector('.mobile-experience');
+  const desktop=document.querySelector('.desktop-experience');
+  let notes=[];
+  try{notes=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){notes=[]}
+
+  const esc=value=>String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const save=()=>{localStorage.setItem(KEY,JSON.stringify(notes));renderNotes()};
+  const addNote=(type,title,detail,meta)=>{notes.push({type,title,detail,meta});save();openDrawer()};
+
+  document.body.insertAdjacentHTML('beforeend',`<div class="fn-backdrop" data-fn-backdrop></div><aside class="fn-notes-drawer" data-fn-drawer aria-hidden="true" aria-labelledby="fn-notes-title"><div class="fn-drawer-head"><div><p class="fn-eyebrow">Portable context</p><h2 id="fn-notes-title">Job notes.</h2></div><button class="fn-close" type="button" data-fn-close aria-label="Close job notes">×</button></div><p class="fn-empty" data-fn-empty>Your selected services, products and image notes will collect here.</p><ol class="fn-note-list" data-fn-list></ol><div class="fn-drawer-actions"><a class="fn-button fn-button--sky" data-fn-email href="mailto:info@xflow.co.za">Continue by email</a><button class="fn-button fn-button--line" type="button" data-fn-copy>Copy notes</button></div></aside><button class="fn-notes-button" type="button" data-fn-open><b data-fn-count>0</b> Job notes</button>`);
+  const drawer=document.querySelector('[data-fn-drawer]'),backdrop=document.querySelector('[data-fn-backdrop]');
+  function openDrawer(){drawer.setAttribute('aria-hidden','false');backdrop.dataset.open='true';drawer.querySelector('.fn-close').focus()}
+  function closeDrawer(){drawer.setAttribute('aria-hidden','true');backdrop.dataset.open='false';document.querySelector('[data-fn-open]').focus()}
+  function noteText(){return notes.map((n,i)=>`${i+1}. ${n.title}${n.detail?` — ${n.detail}`:''}${n.meta?` (${n.meta})`:''}`).join('\n')}
+  function renderNotes(){
+    document.querySelector('[data-fn-count]').textContent=notes.length;
+    document.querySelector('[data-fn-empty]').hidden=notes.length>0;
+    document.querySelector('[data-fn-list]').innerHTML=notes.map((n,i)=>`<li><strong>${String(i+1).padStart(2,'0')}</strong><div><p>${esc(n.title)}${n.detail?` — ${esc(n.detail)}`:''}</p><small>${esc(n.type)}${n.meta?` · ${esc(n.meta)}`:''}</small></div><button class="fn-note-remove" type="button" data-fn-remove="${i}" aria-label="Remove note ${i+1}">×</button></li>`).join('');
+    const subject=encodeURIComponent('Xflow job notes');
+    const body=encodeURIComponent(`Hello Xflow,\n\nI would like to discuss:\n${noteText()||'Please contact me about an infrastructure enquiry.'}\n`);
+    document.querySelector('[data-fn-email]').href=`mailto:info@xflow.co.za?subject=${subject}&body=${body}`;
+  }
+  document.querySelector('[data-fn-open]').addEventListener('click',openDrawer);document.querySelector('[data-fn-close]').addEventListener('click',closeDrawer);backdrop.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.getAttribute('aria-hidden')==='false')closeDrawer()});
+  document.querySelector('[data-fn-list]').addEventListener('click',e=>{const b=e.target.closest('[data-fn-remove]');if(!b)return;notes.splice(Number(b.dataset.fnRemove),1);save()});
+  document.querySelector('[data-fn-copy]').addEventListener('click',async e=>{try{await navigator.clipboard.writeText(noteText());e.currentTarget.textContent='Notes copied'}catch(err){e.currentTarget.textContent='Copy unavailable'}});
+  renderNotes();
+
+  const revealMarkup=()=>`<section class="fn-reveal-section" aria-labelledby="fn-reveal-title"><div class="fn-shell"><div class="fn-intro"><p class="fn-eyebrow">Place / infrastructure</p><h2 class="fn-heading" id="fn-reveal-title">Make the invisible legible.</h2><p class="fn-copy">Move between the working surface and an illustrative view of the systems Xflow supports.</p></div><div class="fn-view-tabs" role="group" aria-label="Choose system view"><button type="button" data-fn-view="place" aria-pressed="true">Place</button><button type="button" data-fn-view="system" aria-pressed="false">Infrastructure</button></div><div class="fn-reveal" data-fn-reveal data-view="place"><div class="fn-photo"><img src="assets/xflow/coastal-site.jpg" alt="Xtreme Flow vehicle at a Western Cape coastal work site"><span class="fn-label">Place</span></div><div class="fn-system" aria-hidden="true"><div class="fn-system-bg"></div><div class="fn-surface"></div><div class="fn-pipe fn-pipe-main"></div><div class="fn-pipe fn-pipe-branch"></div><a class="fn-node fn-node-1" href="water-metering.html"><b>01</b><span>Water metering</span></a><a class="fn-node fn-node-2" href="services.html#pressure"><b>02</b><span>Pressure management</span></a><a class="fn-node fn-node-3" href="pipe-products.html"><b>03</b><span>Pipe products</span></a><span class="fn-label">Illustrative system</span></div><input class="fn-range" type="range" min="0" max="100" value="54" aria-label="Reveal illustrative infrastructure layer"><span class="fn-seam" aria-hidden="true"><span>↔</span></span></div><p class="fn-disclaimer">Diagrammatic navigation view. It does not represent the photographed site.</p></div></section>`;
+  const pointMarkup=()=>`<section class="fn-point" aria-labelledby="fn-point-title"><div class="fn-point-copy"><p class="fn-eyebrow">A clearer first conversation</p><h2 class="fn-heading" id="fn-point-title">Point to what you mean.</h2><p class="fn-copy">Place a marker on the image, describe what you want to discuss and keep it with your job notes.</p></div><div class="fn-workspace"><div class="fn-stage" data-fn-stage tabindex="0" role="application" aria-label="Pipe repair clamp. Click or use arrow keys to position a marker."><img src="assets/xflow/klinger-repair-clamp.jpg" alt="Pipe repair clamp product"><button class="fn-marker" type="button" data-fn-marker style="--x:63%;--y:48%" aria-label="Selected point at 63 percent across and 48 percent down">+</button><p class="fn-stage-tip">Click anywhere to place the marker</p></div><form class="fn-annotation-form" data-fn-form><label>What should Xflow look at?<textarea name="note" rows="3" maxlength="180" placeholder="For example: I need to ask about this connection."></textarea></label><div class="fn-form-row"><span class="fn-coordinates" data-fn-coordinates>Point 63 / 48</span><button class="fn-button" type="submit">Add to job notes →</button></div><p class="fn-message" data-fn-message aria-live="polite"></p></form></div></section>`;
+  const situationsMarkup=()=>`<section class="fn-situations" aria-labelledby="fn-situations-title"><div class="fn-shell"><p class="fn-eyebrow">Start with your situation</p><h2 class="fn-heading" id="fn-situations-title">What are you trying to get done?</h2><div class="fn-situation-grid"><button class="fn-situation" data-title="Discuss water metering" data-detail="Metering enquiry"><small>01</small><strong>Discuss water metering</strong></button><button class="fn-situation" data-title="Find a pipe product" data-detail="Product enquiry"><small>02</small><strong>Find a pipe product</strong></button><button class="fn-situation" data-title="Describe a site or network need" data-detail="Site support enquiry"><small>03</small><strong>Describe a site need</strong></button><button class="fn-situation" data-title="I’m not sure what this is called" data-detail="General enquiry"><small>04</small><strong>I’m not sure what this is called</strong></button></div></div></section>`;
+
+  if(path==='index.html'){
+    [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');const hero=main&&main.querySelector('section');if(hero){hero.insertAdjacentHTML('afterend',revealMarkup()+situationsMarkup()+pointMarkup())}});
+  }else if(path==='services.html'){
+    [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');const hero=main&&main.querySelector('section');if(hero)hero.insertAdjacentHTML('afterend',situationsMarkup())});
+  }
+
+  document.querySelectorAll('[aria-labelledby^="fn-"]').forEach((section,index)=>{const heading=section.querySelector('h2');if(!heading)return;heading.id=`${heading.id}-${index+1}`;section.setAttribute('aria-labelledby',heading.id)});
+  document.querySelectorAll('.fn-system').forEach(system=>system.removeAttribute('aria-hidden'));
+
+  document.querySelectorAll('[data-fn-reveal]').forEach(reveal=>{
+    const range=reveal.querySelector('.fn-range');if(range)range.addEventListener('input',e=>reveal.style.setProperty('--reveal',`${e.target.value}%`));
+    reveal.parentElement.querySelectorAll('[data-fn-view]').forEach(button=>button.addEventListener('click',()=>{reveal.dataset.view=button.dataset.fnView;reveal.parentElement.querySelectorAll('[data-fn-view]').forEach(b=>b.setAttribute('aria-pressed',String(b===button))) }));
+  });
+  document.querySelectorAll('.fn-situation').forEach(button=>button.addEventListener('click',()=>addNote('Situation',button.dataset.title,button.dataset.detail,'')));
+  document.querySelectorAll('[data-fn-stage]').forEach(stage=>{
+    const marker=stage.querySelector('[data-fn-marker]'),form=stage.parentElement.querySelector('[data-fn-form]'),coords=form.querySelector('[data-fn-coordinates]');let point={x:63,y:48};
+    const update=(x,y)=>{point={x:Math.max(4,Math.min(96,Math.round(x))),y:Math.max(7,Math.min(93,Math.round(y)))};marker.style.setProperty('--x',`${point.x}%`);marker.style.setProperty('--y',`${point.y}%`);coords.textContent=`Point ${point.x} / ${point.y}`;marker.setAttribute('aria-label',`Selected point at ${point.x} percent across and ${point.y} percent down`)};
+    stage.addEventListener('pointerdown',e=>{if(e.target.closest('[data-fn-marker]'))return;const r=stage.getBoundingClientRect();update((e.clientX-r.left)/r.width*100,(e.clientY-r.top)/r.height*100)});
+    stage.addEventListener('keydown',e=>{const n=e.shiftKey?5:1,k={ArrowLeft:[-n,0],ArrowRight:[n,0],ArrowUp:[0,-n],ArrowDown:[0,n]};if(!k[e.key])return;e.preventDefault();update(point.x+k[e.key][0],point.y+k[e.key][1])});
+    form.addEventListener('submit',e=>{e.preventDefault();const text=form.note.value.trim();if(!text){form.querySelector('[data-fn-message]').textContent='Add a short note about the selected point.';return}addNote('Image note','Repair clamp',text,`point ${point.x} / ${point.y}`);form.reset();form.querySelector('[data-fn-message]').textContent='Added to your job notes.'});
+  });
+
+  if(path==='pipe-products.html'){
+    document.querySelectorAll('.m-product,.d-product').forEach((card,index)=>{const title=card.querySelector('h3')?.textContent.trim()||'Pipe product';card.insertAdjacentHTML('beforeend',`<div class="fn-shortlist"><span>Add this product to the enquiry</span><button type="button" data-fn-product="${esc(title)}">Shortlist +</button></div>`)});
+    document.querySelectorAll('[data-fn-product]').forEach(button=>button.addEventListener('click',()=>{const selected=button.dataset.selected==='true';if(selected)return;button.dataset.selected='true';button.textContent='Added';addNote('Product',button.dataset.fnProduct,'Ask Xflow about this product','')}));
+  }
+  if(path==='projects.html'){
+    document.querySelectorAll('.m-detail-hero .m-title,.d-detail-hero .d-title').forEach(el=>el.innerHTML='Water infrastructure <span>in practice.</span>');
+    document.querySelectorAll('.m-detail-hero .m-lede').forEach(el=>el.textContent='Field, fleet and product imagery from Xflow’s work.');
+    document.querySelectorAll('.m-photo-card,.d-photo-card').forEach((card,index)=>{const details=['A working view of chamber construction and related water infrastructure.','Xtreme Flow field support shown at a Western Cape coastal site.','Xtreme Flow vehicles shown outside the Cape Town workshop.'];card.querySelector('div')?.insertAdjacentHTML('beforeend',`<button class="fn-story-toggle" type="button" aria-expanded="false">Read field note +</button><p class="fn-story-detail" hidden>${details[index%3]}</p>`)});
+    document.querySelectorAll('.fn-story-toggle').forEach(button=>button.addEventListener('click',()=>{const detail=button.nextElementSibling,open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));button.textContent=open?'Read field note +':'Close field note −';detail.hidden=open}));
+  }
+  if(path==='contact.html'){
+    const handoff=()=>`<section class="fn-handoff" aria-labelledby="fn-handoff-title"><div class="fn-shell fn-handoff-grid"><div><p class="fn-eyebrow">Bring the context with you</p><h2 class="fn-heading" id="fn-handoff-title">Continue with your job notes.</h2><p class="fn-copy">Selections made across the site stay together for a clearer first conversation.</p></div><div class="fn-handoff-list"><h3>Your current notes</h3><p data-fn-handoff-empty>No notes yet. Explore services or products, or open Job Notes.</p><div data-fn-handoff-count></div><button class="fn-button" type="button" data-fn-handoff-open>Review job notes</button></div></div></section>`;
+    [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');if(main)main.insertAdjacentHTML('beforeend',handoff())});
+    document.querySelectorAll('[data-fn-handoff-count]').forEach(el=>el.textContent=notes.length?`${notes.length} item${notes.length===1?'':'s'} ready to review.`:'');document.querySelectorAll('[data-fn-handoff-empty]').forEach(el=>el.hidden=notes.length>0);document.querySelectorAll('[data-fn-handoff-open]').forEach(b=>b.addEventListener('click',openDrawer));
+  }
+})();
