@@ -3,6 +3,8 @@
   const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   const mobile=document.querySelector('.mobile-experience');
   const desktop=document.querySelector('.desktop-experience');
+  document.querySelectorAll('.m-title,.d-title').forEach(title=>{title.innerHTML='What happens <span>beneath</span> shapes everything above.'});
+  document.querySelectorAll('.m-lede,.d-lede').forEach(lede=>{lede.textContent='Make water and civil infrastructure easier to understand, then start a clearer first conversation with Xflow.'});
   let notes=[];
   try{notes=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){notes=[]}
 
