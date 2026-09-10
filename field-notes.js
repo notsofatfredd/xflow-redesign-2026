@@ -76,11 +76,11 @@
 })();
 
 // Brand-pride pass: make Xtreme Flow's own story and crest the lead.
-document.addEventListener('DOMContentLoaded',()=>{
+(()=>{
   const link=document.createElement('link');link.rel='stylesheet';link.href='brand-pride.css';document.head.appendChild(link);
   document.querySelectorAll('.m-hero .m-title,.d-hero .d-title').forEach(el=>el.innerHTML='A company built on <span>20 years of experience.</span>');
   document.querySelectorAll('.m-hero .m-lede,.d-hero .d-lede').forEach(el=>el.textContent='Xtreme Flow is a Cape Town water and civil infrastructure company, shaped by real experience inside the systems our customers rely on.');
   document.querySelectorAll('.m-detail-hero .m-kicker,.d-detail-hero .d-kicker').forEach(el=>el.textContent='The Xtreme Flow story');
   document.querySelectorAll('.m-detail-hero .m-title,.d-detail-hero .d-title').forEach(el=>el.innerHTML='A company shaped by <span>the work.</span>');
   document.querySelectorAll('.m-detail-hero .m-lede').forEach(el=>el.textContent='Established in Cape Town in 2015, Xtreme Flow carries more than 20 years of founder experience into every water and civil infrastructure conversation.');
-});
+})();
