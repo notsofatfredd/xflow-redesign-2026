@@ -1,0 +1,18 @@
+/* Xflow brand-pride layer: company first, concept second. */
+:root{--xflow-cream:#fff8e8;--xflow-ink:#10233f;--xflow-sky:#7ec8f8}
+.d-header,.m-header{background:var(--xflow-cream);border-bottom:2px solid var(--xflow-ink)}
+.d-brand,.m-brand{gap:14px;color:var(--xflow-ink);text-transform:uppercase;letter-spacing:.08em}
+.d-brand img,.m-brand img{filter:none!important;background:#fff;padding:3px;border:2px solid var(--xflow-ink);border-radius:4px;object-fit:contain}
+.d-brand img{width:72px;height:72px}.m-brand img{width:56px;height:56px}
+.d-brand span,.m-brand span{font-size:clamp(15px,1.3vw,20px);font-weight:900;letter-spacing:.18em}
+.d-brand span::after,.m-brand span::after{content:"WATER & CIVIL INFRASTRUCTURE";display:block;margin-top:4px;font-size:8px;letter-spacing:.12em;font-weight:700;opacity:.7}
+.d-hero,.m-hero{background:var(--xflow-ink)}
+.d-hero__copy::before{width:148px;height:148px;margin-bottom:24px;background-color:#fff;background-image:url("assets/xflow/logo.png");background-size:90%;background-repeat:no-repeat;background-position:center;border:5px solid var(--xflow-sky);border-radius:6px;filter:none!important;box-shadow:12px 12px 0 rgba(126,200,248,.28)}
+.d-hero__copy::after{content:"XTREME FLOW  ·  ESTABLISHED 2015  ·  CAPE TOWN";display:block;order:5;margin-top:34px;color:var(--xflow-sky);font-size:11px;font-weight:900;letter-spacing:.15em}
+.d-proofbar,.m-proofbar{background:var(--xflow-sky);color:var(--xflow-ink);border-top:3px solid var(--xflow-ink)}
+.d-section--paper,.m-section--paper{background:var(--xflow-cream)}
+.d-footer,.m-footer{background:var(--xflow-ink);border-top:5px solid var(--xflow-sky)}
+.d-footer__brand img,.m-footer__brand img{filter:none!important;background:#fff;padding:4px;border-radius:4px}
+.d-detail-hero{background:var(--xflow-ink)}
+.d-detail-callout{border:3px solid var(--xflow-sky);background:rgba(126,200,248,.1)}
+@media(max-width:767px){.m-header{position:sticky;background:var(--xflow-cream)}.m-hero{padding-top:34px}.m-hero::before{display:none}.m-hero .m-kicker{width:auto}.m-hero .m-title{width:auto;margin-top:20px;font-size:clamp(48px,13vw,66px);line-height:.88}.m-hero .m-lede{width:auto;font-family:inherit;font-size:17px}.m-hero__actions{width:auto}.m-hero__image{width:100%;margin-inline:0;border:4px solid var(--xflow-sky)}.m-proofbar{grid-template-columns:1fr 1fr}}
