@@ -45,3 +45,4 @@
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.fn-notes-drawer,.fn-backdrop,.fn-system{transition:none!important}}
 @media(max-width:767px){.fn-archive{padding:76px 0 66px}.fn-archive-head{display:block}.fn-archive-head .fn-copy{margin-top:22px}.fn-timeline{display:block;margin-top:54px}.fn-timeline::before{left:9px;right:auto;top:18px;bottom:18px;border-top:0;border-left:1px solid var(--fn-sky);transform:none}.fn-timeline article,.fn-timeline article+article{padding:0 0 34px 38px}.fn-timeline article:last-child{padding-bottom:0}.fn-timeline i{position:absolute;left:0;top:2px;margin:0}.fn-timeline h3{font-size:26px}.fn-timeline p{max-width:none}}
+@media(min-width:768px){body:has(.d-hero) .fn-notes-button{display:none}}

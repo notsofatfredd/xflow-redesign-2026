@@ -37,7 +37,7 @@
   const situationsMarkup=()=>`<section class="fn-situations" aria-labelledby="fn-situations-title"><div class="fn-shell"><p class="fn-eyebrow">Start with your situation</p><h2 class="fn-heading" id="fn-situations-title">What are you trying to get done?</h2><div class="fn-situation-grid"><button class="fn-situation" data-title="Discuss water metering" data-detail="Metering enquiry"><small>01</small><strong>Discuss water metering</strong></button><button class="fn-situation" data-title="Find a pipe product" data-detail="Product enquiry"><small>02</small><strong>Find a pipe product</strong></button><button class="fn-situation" data-title="Describe a site or network need" data-detail="Site support enquiry"><small>03</small><strong>Describe a site need</strong></button><button class="fn-situation" data-title="I’m not sure what this is called" data-detail="General enquiry"><small>04</small><strong>I’m not sure what this is called</strong></button></div></div></section>`;
 
   if(path==='index.html'){
-    [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');const hero=main&&main.querySelector('section');if(hero){hero.insertAdjacentHTML('afterend',archiveMarkup()+revealMarkup()+situationsMarkup()+pointMarkup())}});
+    [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');const hero=main&&main.querySelector('section');if(hero){hero.insertAdjacentHTML('afterend',archiveMarkup()+revealMarkup())}});
   }else if(path==='services.html'){
     [mobile,desktop].forEach(root=>{const main=root&&root.querySelector('main');const hero=main&&main.querySelector('section');if(hero)hero.insertAdjacentHTML('afterend',situationsMarkup())});
   }
