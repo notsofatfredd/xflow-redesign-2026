@@ -17,6 +17,12 @@
   .fn-reveal-section,.fn-situations,.fn-point{position:relative}
   .fn-reveal-section::before,.fn-situations::before,.fn-point::before{content:"XFLOW";position:absolute;right:5vw;top:34px;font:800 10px Arial,sans-serif;letter-spacing:.22em;opacity:.55}
   .fn-point::before{color:var(--fn-sky)}
+  .d-card,.d-photo-card,.d-spec,.d-product,.d-contact-list a,.d-enquiry,.d-detail-callout,.d-split img{border-radius:0}
+  .d-header__cta,.btn{border-radius:0;box-shadow:5px 5px 0 var(--sky)}
+  .d-card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 rgba(16,35,63,.18)}
+  .d-photo-card:hover img{transform:scale(1.04)}
+  .d-footer__brand img{width:104px;height:104px}
+  .d-footer__brand{align-items:flex-start}
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {
